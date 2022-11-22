@@ -20,7 +20,7 @@ export default function hebergements() {
 
                 <div className={Styles.containerHebergement}>
                     <div className={Styles.imgRoulotte}>
-                        <Image src="/images/roulottes.6f76e8c4.jpg" alt="roulotte" />
+                        <Image src="/images/roulottes.6f76e8c4.jpg" alt="roulotte" width="600" height="500" />
                     </div>
                     <div className={Styles.contentRoulotte}>
                         <h1>Nos Hébergements ...</h1>

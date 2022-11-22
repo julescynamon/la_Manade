@@ -29,33 +29,33 @@
 }
 
 .context>p {
-    color: #fff;
+    color: var(--white);
     margin-top: 42px;
     padding: 20px;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 15px;
     font-weight: 400;
     line-height: 24px;
 }
 
 .welcomeHero {
-    color: #fff;
+    color: var(--white);
     text-align: center;
     margin: 0;
     padding: 2px;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 2rem;
     font-weight: 700;
     line-height: 45px;
 }
 
 .moreHero {
-    color: #fff;
-    background-color: #165954;
+    color: var(--white);
+    background-color: var(--color-back);
     border-radius: 5px;
     margin: 30px;
     padding: 10px 20px;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 14px;
     font-weight: 400;
     transition: all .5s ease-in-out;
@@ -68,8 +68,8 @@
 .cornerRight {
     width: 50px;
     height: 50px;
-    border-top: 1px solid #f5f5f5;
-    border-right: 1px solid #f5f5f5;
+    border-top: 1px solid var(--white);
+    border-right: 1px solid var(--white);
     position: relative;
     top: -99px;
     left: 95px;
@@ -79,8 +79,8 @@
 .cornerLeft {
     width: 50px;
     height: 50px;
-    border-bottom: 1px solid #f5f5f5;
-    border-left: 1px solid #f5f5f5;
+    border-bottom: 1px solid var(--white);
+    border-left: 1px solid var(--white);
     position: relative;
     top: -6px;
     left: -95px;
@@ -137,7 +137,7 @@
 .content__about>h2 {
     color: #000;
     text-align: center;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 2rem;
     font-weight: 500;
     line-height: 45px;
@@ -154,7 +154,7 @@
     text-align: center;
     margin-top: 10px;
     padding: 20px;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 15px;
     font-weight: 200;
     line-height: 24px;
@@ -168,7 +168,7 @@
 
 .separate {
     width: 70px;
-    border-top: 3px solid #ed6b5b;
+    border-top: 3px solid var(--color-secondary);
     margin: 13px auto;
 }
 
@@ -227,7 +227,7 @@
 .activities>h2 {
     color: #000;
     text-align: center;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 2rem;
     font-weight: 500;
     line-height: 45px;
@@ -236,7 +236,7 @@
 
 .separate__services {
     width: 70px;
-    border-top: 3px solid #ed6b5b;
+    border-top: 3px solid var(--color-secondary);
     margin: 13px auto;
 }
 
@@ -265,7 +265,7 @@
     color: #000;
     text-align: center;
     margin-top: 1rem;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 45px;
@@ -274,7 +274,7 @@
 .card__activities>p {
     color: #000;
     padding: 20px;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 15px !important;
     line-height: 24px;
 }
@@ -290,11 +290,11 @@
 }
 
 .btnAction>a {
-    color: #000;
+    color: var(--text-color);
     text-transform: uppercase;
-    border-bottom: 2px solid #165954;
+    border-bottom: 2px solid var(--color-back);
     padding-bottom: 4px;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 12px;
     font-weight: 700;
     line-height: 24px;
@@ -303,7 +303,7 @@
 }
 
 .btnAction>a:hover {
-    color: #165954;
+    color: var(--color-back);
 }
 
 .btnAction:hover {
@@ -368,7 +368,7 @@
     color: #000;
     text-align: center;
     margin-top: 4rem;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 2rem;
     font-weight: 500;
     line-height: 45px;
@@ -376,7 +376,7 @@
 
 .separate__actualities {
     width: 70px;
-    border-top: 3px solid #ed6b5b;
+    border-top: 3px solid var(--color-secondary);
     margin: 13px auto;
 }
 
@@ -401,19 +401,19 @@
 }
 
 .card__actualities>h3 {
-    color: #f5f5f5;
+    color: var(--white);
     text-align: center;
     margin-top: 1rem;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 45px;
 }
 
 .card__actualities>p {
-    color: #f5f5f5;
+    color: var(--white);
     padding: 20px;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 15px;
     font-weight: 200;
     line-height: 24px;
@@ -430,9 +430,9 @@
 }
 
 .btn__actualities>a {
-    color: #f5f5f5;
+    color: var(--white);
     padding-bottom: 4px;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 15px;
     font-weight: 700;
     line-height: 24px;
@@ -444,7 +444,7 @@
     content: "";
     width: 0;
     height: 2px;
-    background: #165954;
+    background: var(--color-back);
     transition: width .3s;
     display: block;
 }
@@ -454,14 +454,14 @@
 }
 
 .btn__actualities>a:hover {
-    color: #165954;
+    color: var(--color-back);
 }
 
 .btn__all {
     width: 212px;
     height: 40px;
     cursor: pointer;
-    background-color: #165954;
+    background-color: var(--color-back);
     border: none;
     border-radius: 5px;
     margin-top: 12px;
@@ -477,8 +477,8 @@
 }
 
 .btn__all>a {
-    color: #f5f5f5;
-    font-family: Cardo, serif;
+    color: var(--white);
+    font-family: var(--font);
     font-size: 12px;
     font-weight: 700;
     line-height: 24px;
@@ -502,7 +502,7 @@
     color: #000;
     text-align: center;
     margin-top: 4rem;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 2rem;
     font-weight: 500;
     line-height: 35px;
@@ -511,8 +511,8 @@
 .testimonials__container {
     width: 100%;
     height: auto;
-    color: #f5f5f5;
-    background-color: #ed6b5b;
+    color: var(--white);
+    background-color: var(--color-secondary);
     border-radius: 5px;
     flex-direction: column;
     justify-content: center;
@@ -535,12 +535,12 @@
 
 .separate__testimonials {
     width: 70px;
-    border-top: 3px solid #ed6b5b;
+    border-top: 3px solid var(--color-secondary);
     margin: 13px auto;
 }
 
 .quotes {
-    color: #f9ac66;
+    color: var(--color-primary);
     margin-right: 1rem;
     font-size: 3rem;
 }

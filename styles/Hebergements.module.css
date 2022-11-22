@@ -40,9 +40,9 @@
 }
 
 .contentRoulotte>h1 {
-    color: #f9ac66;
+    color: var(--color-primary);
     margin-bottom: 1rem;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     font-size: 2.5rem;
 }
 
@@ -54,8 +54,8 @@
 }
 
 .contentRoulotte>p>a {
-    color: #f5f5f5;
-    background-color: #ed6b5b;
+    color: var(--white);
+    background-color: var(--color-secondary);
     border-radius: 5px;
     padding: .5rem 1rem;
     text-decoration: none;
@@ -63,6 +63,6 @@
 }
 
 .contentRoulotte>p>a:hover {
-    color: #f9ac66;
+    color: var(--color-primary);
     background-color: #ea4b36;
 }

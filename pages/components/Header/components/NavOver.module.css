@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #165954;
+    background-color: var(--color-back);
     color: var(--white);
     position: absolute;
     top: 33px;

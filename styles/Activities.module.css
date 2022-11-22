@@ -1,0 +1,94 @@
+.activitiesContainer {
+    grid-gap: 1rem;
+    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "img attract content";
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+}
+
+@media screen and (max-width: 900px) {
+    .activitiesContainer {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "attract"
+            "content"
+            "img";
+    }
+}
+
+.imgActivities {
+    height: 500px;
+    grid-area: img;
+}
+
+.imgActivities>img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0003;
+}
+
+.attract-activities {
+    height: 500px;
+    text-align: center;
+    background-color: var(--white);
+    border-radius: 5px;
+    flex-direction: column;
+    grid-area: attract;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    display: flex;
+    box-shadow: 0 0 10px #0003;
+}
+
+.attract-activities>h1 {
+    margin-bottom: 14px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.attract-activities>h2 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.bx-right-arrow-alt {
+    color: var(--color-secondary);
+    font-size: 3rem;
+}
+
+.contentActivities {
+    height: 500px;
+    text-align: center;
+    background-color: var(--color-back);
+    border-radius: 5px;
+    flex-direction: column;
+    grid-area: content;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    display: flex;
+    box-shadow: 0 0 10px #0003;
+}
+
+.contentActivities>p {
+    color: var(--white);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.contentActivities>p>a {
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contentActivities>p>a:hover {
+    color: var(--color-secondary);
+}
