@@ -64,41 +64,41 @@ export default function Home() {
 					<h2>Nos Services ...</h2>
 					<div className={Styles.separate__services}></div>
 					<div className={Styles.container__activities}>
-						<div className={Styles.card__activities} act_1>
+						<div className={Styles.card__activities}>
 							<h3>Soirée Camarguaise</h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere tempora non vitae
 								magnam
 								dolores inventore. Repellendus beatae voluptate et!</p>
 							<button className={Styles.btnAction}><a href="#">Voire plus ...</a></button>
 						</div>
-						<div className={Styles.card__activities} act_2>
+						<div className={Styles.card__activities}>
 							<h3>Salle de réception</h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae neque molestias saepe nisi
 								suscipit ipsum culpa, dolor temporibus quisquam quod.</p>
 							<button className={Styles.btnAction}><a href="#">Voire plus ...</a></button>
 						</div>
-						<div className={Styles.card__activities} act_3>
+						<div className={Styles.card__activities}>
 							<h3>Course Camarguaise</h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem vel
 								obcaecati
 								necessitatibus illo consequatur officiis hic optio sequi recusandae.</p>
 							<button className={Styles.btnAction}><a href="/activities.html">Voire plus ...</a></button>
 						</div>
-						<div className={Styles.card__activities} act_4>
+						<div className={Styles.card__activities}>
 							<h3>Animations Taurine</h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem vel
 								obcaecati
 								necessitatibus illo consequatur officiis hic optio sequi recusandae.</p>
 							<button className={Styles.btnAction}><a href="#">Voire plus ...</a></button>
 						</div>
-						<div className={Styles.card__activities} act_5>
+						<div className={Styles.card__activities}>
 							<h3>Nos Hébergements</h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem vel
 								obcaecati
 								necessitatibus illo consequatur officiis hic optio sequi recusandae.</p>
 							<button className={Styles.btnAction}><a href="#">Voire plus ...</a></button>
 						</div>
-						<div className={Styles.card__activities} act_6>
+						<div className={Styles.card__activities}>
 							<h3>Produits Fermiers</h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem vel obcaecati
 								necessitatibus illo consequatur officiis hic optio sequi recusandae.</p>

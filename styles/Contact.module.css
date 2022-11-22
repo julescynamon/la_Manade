@@ -1,0 +1,117 @@
+.contactContainer {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #00000073, #00000073), url("/images/contact.jpg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    display: flex;
+}
+
+@media screen and (max-width: 1000px) {
+    .contactContainer {
+        flex-direction: column;
+    }
+}
+
+.containerContent {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin-left: 3rem;
+    display: flex;
+}
+
+@media screen and (max-width: 1000px) {
+    .containerContent {
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+
+
+
+.containerContent>h1 {
+    letter-spacing: 14px;
+    color: #f9ac66;
+    margin-bottom: 1rem;
+    font-family: Cardo, serif;
+    font-size: 2.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .containerContent>h1 {
+        text-align: center;
+        margin-top: 4rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .containerContent>h1 {
+        letter-spacing: 10px;
+        font-size: 1.5rem;
+    }
+}
+
+.containerForm {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    display: flex;
+}
+
+.formGroup {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+
+.group1 {
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.btnSub {
+    width: 100%;
+    color: #f9ac66;
+    cursor: pointer;
+    background-color: #0000;
+    border: 1px solid #f9ac66;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 10px;
+    font-family: Cardo, serif;
+    font-size: 14px;
+}
+
+.btnSub:hover {
+    color: #ed6b5b;
+    background-color: #f9ac66;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.succesMessage {
+    color: green;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}

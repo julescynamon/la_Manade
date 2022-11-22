@@ -517,8 +517,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem 30px 4rem;
-    padding: 10px;
+    margin: 50px auto;
     display: flex;
     box-shadow: 0 50px 100px -20px #32325d40, 0 30px 60px -30px #0000004d, inset 0 -2px 6px #0a254059;
 }
