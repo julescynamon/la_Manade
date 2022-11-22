@@ -2,7 +2,7 @@
 @import "https://fonts.googleapis.com/css2?family=Cardo&display=swap";
 
 :root {
-    --color-primary: #F9AC66;
+    --color-primary: #f9ac66;
     --color-secondary: #ed6b5b;
     --color-back: #165954;
     --white: #f5f5f5;
@@ -39,7 +39,7 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     flex-direction: column;
-    font-family: Cardo, serif;
+    font-family: var(--font);
     line-height: 1.7;
     display: flex;
 }

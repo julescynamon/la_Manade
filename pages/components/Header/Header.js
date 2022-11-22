@@ -30,12 +30,12 @@ export default function Header() {
 
     return (
         <header className={Styles.header}>
-            <div className={Styles.header__title}>
+            <div className={Styles.headerTitle}>
             <Link href="/">
                 <h1>La Manade du Joncas</h1>
             </Link>
         </div>
-        <div className={Styles.header__nav}>
+        <div className={Styles.headerNav}>
             <nav>
                 <ul className={addClass}>
                     <li><Link href="/">Accueil</Link></li>
