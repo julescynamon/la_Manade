@@ -1,12 +1,48 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script'
 import Styles from '../styles/Home.module.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import { ImQuotesRight } from 'react-icons/im';
 
+import { getActualities } from './api/actualitiesAPI';
+import { getActivities } from './api/activitiesAPI';
+
 
 export default function Home() {
+
+	const [isLoading, setIsLoading] = useState(true);
+	const [ actualities, setActualities ] = useState([]);
+	const [ activities, setActivities ] = useState([]);
+
+	const fetchActualities = async () => {
+		const data = await getActualities();
+		setActualities(data.data);
+		console.log(actualities);
+		setIsLoading(false);
+	};
+
+	const fetchActivities = async () => {
+		const data = await getActivities();
+		setActivities(data.data);
+		console.log(activities);
+		setIsLoading(false);
+	};
+
+
+
+	useEffect(() => {
+		fetchActualities();
+		fetchActivities();
+	}, []);
+
+
+
+
+
 	return (
 		<>
 			<Head>
@@ -54,8 +90,8 @@ export default function Home() {
 						</p>
 
 						<div className={Styles.about__img}>
-							<img className={Styles.image__back} src="/images/imgBack.jpg" alt=""/>
-							<img className={Styles.image__front} src="/images/imgFront.jpg" alt=""/>
+							<Image className={Styles.image__back} src="/images/imgBack.jpg" alt="taureaux en pleine nature" width="600" height="500"/>
+							<Image className={Styles.image__front} src="/images/imgFront.jpg" alt="taureaux en pleine nature" width="600" height="500"/>
 						</div>
 					</div>
 				</section>
@@ -64,46 +100,20 @@ export default function Home() {
 					<h2>Nos Services ...</h2>
 					<div className={Styles.separate__services}></div>
 					<div className={Styles.container__activities}>
-						<div className={Styles.card__activities}>
-							<h3>Soirée Camarguaise</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere tempora non vitae
-								magnam
-								dolores inventore. Repellendus beatae voluptate et!</p>
-							<button className={Styles.btnAction}><a href="#">Voire plus ...</a></button>
-						</div>
-						<div className={Styles.card__activities}>
-							<h3>Salle de réception</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae neque molestias saepe nisi
-								suscipit ipsum culpa, dolor temporibus quisquam quod.</p>
-							<button className={Styles.btnAction}><a href="#">Voire plus ...</a></button>
-						</div>
-						<div className={Styles.card__activities}>
-							<h3>Course Camarguaise</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem vel
-								obcaecati
-								necessitatibus illo consequatur officiis hic optio sequi recusandae.</p>
-							<button className={Styles.btnAction}><a href="/activities.html">Voire plus ...</a></button>
-						</div>
-						<div className={Styles.card__activities}>
-							<h3>Animations Taurine</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem vel
-								obcaecati
-								necessitatibus illo consequatur officiis hic optio sequi recusandae.</p>
-							<button className={Styles.btnAction}><a href="#">Voire plus ...</a></button>
-						</div>
-						<div className={Styles.card__activities}>
-							<h3>Nos Hébergements</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem vel
-								obcaecati
-								necessitatibus illo consequatur officiis hic optio sequi recusandae.</p>
-							<button className={Styles.btnAction}><a href="#">Voire plus ...</a></button>
-						</div>
-						<div className={Styles.card__activities}>
-							<h3>Produits Fermiers</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem vel obcaecati
-								necessitatibus illo consequatur officiis hic optio sequi recusandae.</p>
-							<button className={Styles.btnAction}><a href="#">Voire plus ...</a></button>
-						</div>
+						{activities.map((activity) => (
+							<div className={Styles.card__activities} key={activity.id}>
+								<h3>{activity.attributes.title}</h3>
+								<p>{activity.attributes.description}</p>
+								<button className={Styles.btnAction}><Link href={`/activities/${activity.attributes.slug}`} >Voire plus ...</Link></button>
+							</div>
+						))}
+							<div className={Styles.card__activities}>
+								<h3>Nos Hébergements</h3>
+								<p>
+									Afin de diversifier notre activité, nous vous proposons un hébergement insolite dans nos roulottes. Placées sur les bords du lac de 4 Ha, vous êtes aux premières loges pour apercevoir les taureaux qui viennent s'abreuver sur l'autre rive. 
+								</p>
+								<button className={Styles.btnAction}><Link href="/hebergements" >Voire plus ...</Link></button>
+							</div>
 					</div>
 				</section>
 
@@ -117,21 +127,13 @@ export default function Home() {
 							dolores inventore. Repellendus beatae voluptate et!</p>
 						<button className={Styles.btn__actualities}><a href="#">Voire plus ...</a></button>
 					</div>
-					<button className={Styles.btn__all}><a href="#">Voire d'autres actualités</a></button>
 				</section>
 
         		<section className={Styles.testimonials}>
 					<h2>Témoignages ...</h2>
 					<div className={Styles.separate__testimonials}></div>
 					<div>
-						<div className={Styles.testimonials__container}>
-							<ImQuotesRight className={Styles.quotes} /> 
-							<p>Nous nous sommes mariés le 21 mai 2022 à la Manade du Joncas. C’était le lieu que nous
-								recherchions, la nature, les animaux, le cadre idyllique tout en simplicité ! Chrystelle nous a
-								régalé pour le cocktail du midi et le repas du soir. Une journée inoubliable, merci beaucoup!!
-							</p>
-							<h2>Claire G.</h2>
-						</div>
+					
 					</div>
 				</section>
 				

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "activity",
     "pluralName": "activities",
-    "displayName": "activity"
+    "displayName": "activity",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,14 +22,21 @@
       "type": "richtext"
     },
     "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

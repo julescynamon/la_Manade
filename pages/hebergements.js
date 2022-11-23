@@ -6,7 +6,11 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Styles from '../styles/Hebergements.module.css';
 
-export default function hebergements() {
+
+
+export default function hebergements(props) {    // on recupere l'url de l'image
+
+
     return (
         <>
             <Head>

@@ -1,8 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Styles from './styles/Activities.module.css';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import Styles from '../../styles/Activities.module.css';
+
+
+
+
 
 export default function Activities() {
     return (
@@ -16,18 +20,18 @@ export default function Activities() {
 
             <main>
 
-                <div class={Styles.activitiesContainer}>
-                    <div class={Styles.imgActivities}>
+                <div className={Styles.activitiesContainer}>
+                    <div className={Styles.imgActivities}>
                         <Image src="/course.960190e5.jpg" alt="" width="600" height="500" />
                     </div>
-                    <div class={Styles.attract-activities}>
+                    <div className={Styles.attractActivities}>
                         <h1>Les Courses Camarguaises</h1>
                         <h2>Un univers passionant</h2>
-                        <div class={Styles.fleche}>
+                        <div className={Styles.fleche}>
                             
                         </div>
                     </div>
-                    <div class={Styles.contentActivities}>
+                    <div className={Styles.contentActivities}>
                         <p>
                             La Course Camarguaise existe depuis le XIIe siècle, des jeux avec des taureaux sans brutalité ni
                             mise à mort.

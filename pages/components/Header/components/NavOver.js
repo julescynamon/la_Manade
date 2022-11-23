@@ -10,7 +10,6 @@ export default function NavOver() {
                 <li><Link href="activities/animations-taurine">Les animations Taurine</Link></li>
                 <li><Link href="activities/salle-de-reception">La salle de réception</Link></li>
                 <li><Link href="activities/produits-fermiers">Les produits fermiers</Link></li>
-                <li><Link href="activities/hebergements">Nos Hébergements</Link></li>
             </ul>
         </div>
     )

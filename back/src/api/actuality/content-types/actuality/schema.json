@@ -4,7 +4,8 @@
   "info": {
     "singularName": "actuality",
     "pluralName": "actualities",
-    "displayName": "actuality"
+    "displayName": "actuality",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +19,15 @@
       "type": "richtext"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

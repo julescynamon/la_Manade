@@ -31,7 +31,7 @@
     box-shadow: 0 0 10px #0003;
 }
 
-.attract-activities {
+.attractActivities {
     height: 500px;
     text-align: center;
     background-color: var(--white);
@@ -45,22 +45,18 @@
     box-shadow: 0 0 10px #0003;
 }
 
-.attract-activities>h1 {
+.attractActivities>h1 {
     margin-bottom: 14px;
     font-size: 2rem;
     font-weight: 700;
 }
 
-.attract-activities>h2 {
+.attractActivities>h2 {
     margin-bottom: 1rem;
     font-size: 1rem;
     font-weight: 200;
 }
 
-.bx-right-arrow-alt {
-    color: var(--color-secondary);
-    font-size: 3rem;
-}
 
 .contentActivities {
     height: 500px;
