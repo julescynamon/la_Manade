@@ -37,7 +37,6 @@ export async function getStaticProps({ params }) {
 
 export default function Activities({ activity }) {
 
-    console.log(activity.attributes.title);
 
 
     return (

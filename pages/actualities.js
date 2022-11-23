@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Styles from '../styles/Actualities.module.css';
 
+
 export default function actualities() {
     return (
         <>

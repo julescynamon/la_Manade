@@ -9,7 +9,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Styles from '../styles/Contact.module.css';
 
-export default function contact() {
+export default function Contact() {
 
 	const form = useRef();
 	const [validation, setValidation] = useState("");
