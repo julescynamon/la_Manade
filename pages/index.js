@@ -12,6 +12,7 @@ import { getActualities } from './api/actualitiesAPI';
 import { getActivities } from './api/activitiesAPI';
 
 
+
 export default function Home() {
 
 	const [isLoading, setIsLoading] = useState(true);
@@ -21,14 +22,12 @@ export default function Home() {
 	const fetchActualities = async () => {
 		const data = await getActualities();
 		setActualities(data.data);
-		console.log(actualities);
 		setIsLoading(false);
 	};
 
 	const fetchActivities = async () => {
 		const data = await getActivities();
 		setActivities(data.data);
-		console.log(activities);
 		setIsLoading(false);
 	};
 
@@ -38,9 +37,6 @@ export default function Home() {
 		fetchActualities();
 		fetchActivities();
 	}, []);
-
-
-
 
 
 	return (

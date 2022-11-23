@@ -19,7 +19,7 @@ export default function custom404() {
 
         <main>
 
-            <div class={Styles.errorPage}>
+            <div className={Styles.errorPage}>
                 <h1>Oops !</h1>
                 <h2>La page que vous recherchez n'existe pas.</h2>
                 <p>Retournez sur le site <Link href="/">ici</Link> ou <Link href="/contact">Contactz-nous</Link> pour nous parler du problème rencontré</p>

@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import Styles from './NavOver.module.css';
 
-export default function NavOver() {
+
+export default function NavOver(props) {
+
     return (
         <div>
             <ul className={Styles.sub}>
