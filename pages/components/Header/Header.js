@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Styles from './Header.module.css';
 import { BsChevronUp, BsChevronDown  } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -32,6 +33,7 @@ export default function Header() {
         <header className={Styles.header}>
             <div className={Styles.headerTitle}>
             <Link href="/">
+                <Image src="/images/icone.png" width="65" height="65" alt="logo" />
                 <h1>La Manade du Joncas</h1>
             </Link>
         </div>
@@ -42,7 +44,7 @@ export default function Header() {
                     <li onMouseEnter={ toggleNavOver }><Link href="/" id="activities-link">Nos Activitées{ showNavOver ?  <BsChevronDown className={Styles.chevronDown} /> : <BsChevronUp className={Styles.chevronUp}/> }</Link></li>
                     
                     { showNavOver ? <NavOver /> : null }
-                    <li>Nos Actualitées</li>
+                    <li><Link href="/actuality">Nos Actualitées</Link></li>
                     <li><Link href="/hebergements">Nos Hébergements</Link></li>
                     <li><Link href="/contact">Contact</Link></li>
                 </ul>

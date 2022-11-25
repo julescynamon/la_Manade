@@ -8,9 +8,18 @@
 }
 
 .headerTitle>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-brush);
     font-size: 10px;
     font-weight: 400;
+}
+
+.headerTitle>a>h1 {
+    margin-top: 11px;
+    margin-left: 15px;
+
 }
 
 .headerNav>nav>ul>li {

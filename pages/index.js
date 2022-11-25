@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import Script from 'next/script'
+
 import Styles from '../styles/Home.module.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import { ImQuotesRight } from 'react-icons/im';
+
 
 import { getActualities } from './api/actualitiesAPI';
 import { getActivities } from './api/activitiesAPI';
@@ -21,7 +22,8 @@ export default function Home() {
 
 	const fetchActualities = async () => {
 		const data = await getActualities();
-		setActualities(data.data);
+		const lastActualities = data.data[data.data.length - 1];
+		setActualities(lastActualities);
 		setIsLoading(false);
 	};
 
@@ -44,14 +46,15 @@ export default function Home() {
 			<Head>
 				<title>La Manade du Joncas - Ferme Taurine</title>
 				<meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur." />
+				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<Header />
 
-			<main className={Styles.content}>
+			<main>
 
 				<section className={Styles.hero}>
-					<video src="https://assets.codepen.io/6093409/river.mp4" className={Styles.backgroundVideo} autoPlay  loop muted></video>
+					<video src="/videos/test.mp4" className={Styles.backgroundVideo} autoPlay  loop muted></video>
 					<div className={Styles.context}>
 						<p>Plus qu'un travail, une passion !</p>
 						<div className={Styles.cornerRight}></div>
@@ -95,15 +98,15 @@ export default function Home() {
 				<section className={Styles.activities}>
 					<h2>Nos Services ...</h2>
 					<div className={Styles.separate__services}></div>
-					<div className={Styles.container__activities}>
+					<div className={Styles.containerActivities}>
 						{activities.map((activity) => (
-							<div className={Styles.card__activities} key={activity.id}>
+							<div className={Styles.cardActivities} key={activity.id}>
 								<h3>{activity.attributes.title}</h3>
 								<p>{activity.attributes.description}</p>
 								<button className={Styles.btnAction}><Link href={`/activities/${activity.attributes.slug}`} >Voire plus ...</Link></button>
 							</div>
 						))}
-							<div className={Styles.card__activities}>
+							<div className={Styles.cardActivities}>
 								<h3>Nos Hébergements</h3>
 								<p>
 									Afin de diversifier notre activité, nous vous proposons un hébergement insolite dans nos roulottes. Placées sur les bords du lac de 4 Ha, vous êtes aux premières loges pour apercevoir les taureaux qui viennent s'abreuver sur l'autre rive. 
@@ -116,20 +119,18 @@ export default function Home() {
 				<section className={Styles.actualities}>
 					<h2>Dernières Actualitées ...</h2>
 					<div className={Styles.separate__actualities}></div>
-					<div className={Styles.card__actualities}>
-						<h3>Soirée Camarguaise</h3>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere tempora non vitae
-							magnam
-							dolores inventore. Repellendus beatae voluptate et!</p>
-						<button className={Styles.btn__actualities}><a href="#">Voire plus ...</a></button>
-					</div>
+						<div className={Styles.card__actualities}>
+							<h3>{actualities.attributes?.title}</h3>
+							<p>{actualities.attributes?.content.substring(0, 200)} ...</p>
+							<button className={Styles.btn__actualities}><Link href="/actuality" >Voire plus ...</Link></button>
+						</div>
 				</section>
 
         		<section className={Styles.testimonials}>
 					<h2>Témoignages ...</h2>
 					<div className={Styles.separate__testimonials}></div>
-					<div>
-					
+					<div className={Styles.testimonials__container}>
+						test
 					</div>
 				</section>
 				

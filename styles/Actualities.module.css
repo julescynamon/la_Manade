@@ -82,22 +82,22 @@
     }
 } */
 
-.card>h2 {
+.card>h1 {
     color: var(--color-primary);
     margin-left: 30rem;
     font-family: var(--font-brush);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 200;
 }
 
 @media screen and (max-width: 700px) {
-    .card>h2 {
+    .card>h1 {
         margin-left: 20rem;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .card>h2 {
+    .card>h1 {
         margin-left: 0;
     }
 }
@@ -115,7 +115,7 @@
 }
 
 .card>h3 {
-    width: 311px;
+    width: 270px;
     color: var(--color-primary);
     letter-spacing: 5px;
     background-color: var(--color-back);
