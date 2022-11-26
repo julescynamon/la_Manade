@@ -20,6 +20,7 @@ export default function Footer() {
             <div className={Styles.line}></div>
             <div className={Styles.copyright}>
                 <p>© 2021 - Tous droits réservés</p>
+                <p><Link href="/mentions-legales">Mentions Légales</Link></p>
             </div>
         </footer>
     )
