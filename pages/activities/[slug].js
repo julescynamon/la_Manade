@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Header from '../components/Header/Header';
@@ -5,7 +6,23 @@ import Footer from '../components/Footer/Footer';
 import Styles from '../../styles/Activities.module.css';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+
+// import required modules
+import { Pagination, Navigation } from "swiper";
+
 import { getActivities } from '../api/activitiesAPI';
+
+import { API_URL } from '../../config/config';
+
+
 
 export async function getStaticPaths() {
     const activities = await getActivities();
@@ -38,7 +55,6 @@ export async function getStaticProps({ params }) {
 export default function Activities({ activity }) {
 
 
-
     return (
         <>
             <Head>
@@ -51,9 +67,29 @@ export default function Activities({ activity }) {
             <main>
 
                 <div className={Styles.activitiesContainer}>
-                    {/* <div className={Styles.imgActivities}>
-                        <Image src="/course.960190e5.jpg" alt="" width="600" height="500" />
-                    </div> */}
+                    {activity.attributes.image.data.length >= 2 ? ( <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        navigation={true}
+                        modules={[Pagination, Navigation]}
+                        className={Styles.swiper}
+                    >
+                    {activity.attributes.image.data.map((image) => (
+                        <SwiperSlide key={image.id}>
+                            <div className={Styles.imgActivities}>
+                                <Image src={API_URL + image.attributes.formats.small.url.toString()} alt="" width="600" height="500" />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                    </Swiper> ) : (
+                        <div className={Styles.imgActivities}>
+                            <Image src={API_URL + activity.attributes.image.data[0].attributes.formats.small.url.toString()} alt="" width="600" height="500" />
+                        </div>
+                    )}
                     <div className={Styles.attractActivities}>
                         <h1>{ activity.attributes.title }</h1>
                         <h2>{ activity.attributes.subtitle }</h2>

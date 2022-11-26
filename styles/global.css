@@ -49,6 +49,8 @@ a {
     text-decoration: none;
 }
 
+/* css des inputs de la page contact */
+
 ::-webkit-input-placeholder {
     color: #f9ac66 !important;
 }
@@ -101,4 +103,15 @@ label {
     margin-bottom: 1rem;
     font-family: Cardo, serif;
     font-size: 1rem;
+}
+
+/* css du slide d'activities */
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #165954 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #165954 !important;
 }
