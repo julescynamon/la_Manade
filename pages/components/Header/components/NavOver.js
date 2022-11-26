@@ -5,7 +5,7 @@ import Styles from './NavOver.module.css';
 export default function NavOver(props) {
 
     return (
-        <div>
+        <>
             <ul className={Styles.sub}>
                 <li><Link href="activities/soirée-camarguaise">Soirée Camarguaise</Link></li>
                 <li><Link href="activities/courses-camarguaise">La Course Camarguaise</Link></li>
@@ -13,6 +13,6 @@ export default function NavOver(props) {
                 <li><Link href="activities/réception">La salle de réception</Link></li>
                 <li><Link href="activities/produits-fermiers">Les produits fermiers</Link></li>
             </ul>
-        </div>
+        </>
     )
 }
