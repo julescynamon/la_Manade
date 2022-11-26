@@ -41,7 +41,7 @@ export default function Actuality() {
 
             <main>
 
-				<div className={Styles.actualitiesContainer}>
+				<div className={Styles.actualitiesContainer} data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
 
 					<div className={Styles.card}>
 						<div className={Styles.image}>
@@ -52,7 +52,8 @@ export default function Actuality() {
 						<p>{actualities.attributes?.content}</p>
 						<h3>Suivez nos actualités <a href="https://www.facebook.com/manadedu.joncas">ici</a></h3>
 					</div>
-					</div>
+
+				</div>
 
             </main>
 

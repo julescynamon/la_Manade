@@ -55,7 +55,7 @@ export default function Home() {
 
 				<section className={Styles.hero}>
 					<video src="/videos/test.mp4" className={Styles.backgroundVideo} autoPlay  loop muted></video>
-					<div className={Styles.context}>
+					<div className={Styles.context} data-aos="fade-left">
 						<p>Plus qu'un travail, une passion !</p>
 						<div className={Styles.cornerRight}></div>
 						<h1 className={Styles.welcomeHero}>Bienvenue, à la Manade du Joncas</h1>
@@ -67,7 +67,7 @@ export default function Home() {
 
 				<section className={Styles.about}>
 					<div className={Styles.content__about}>
-						<h2>À Propos de nous...</h2>
+						<h2 data-aos="fade-up" data-aos-delay="300">À Propos de nous...</h2>
 						<div className={Styles.separate}></div>
 						<p>
 							C'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard,
@@ -89,16 +89,18 @@ export default function Home() {
 						</p>
 
 						<div className={Styles.about__img}>
-							<Image className={Styles.image__back} src="/images/imgBack.jpg" alt="taureaux en pleine nature" width="600" height="500"/>
-							<Image className={Styles.image__front} src="/images/imgFront.jpg" alt="taureaux en pleine nature" width="600" height="500"/>
+							<Image className={Styles.image__back} src="/images/imgBack.jpg" alt="taureaux en pleine nature" width="600" height="500" data-aos="fade-up-right"/>
+							<Image className={Styles.image__front} src="/images/imgFront.jpg" alt="taureaux en pleine nature" width="600" height="500" data-aos="fade-up-left"/>
 						</div>
 					</div>
 				</section>
 
 				<section className={Styles.activities}>
-					<h2>Nos Services ...</h2>
+					<h2 data-aos="fade-up">Nos Services ...</h2>
 					<div className={Styles.separate__services}></div>
-					<div className={Styles.containerActivities}>
+					<div className={Styles.containerActivities} data-aos="fade-right"
+						data-aos-offset="300"
+						data-aos-easing="ease-in-sine">
 						{activities.map((activity) => (
 							<div className={Styles.cardActivities} key={activity.id}>
 								<h3>{activity.attributes.title}</h3>
@@ -117,9 +119,9 @@ export default function Home() {
 				</section>
 
 				<section className={Styles.actualities}>
-					<h2>Dernières Actualitées ...</h2>
+					<h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom">Dernières Actualitées ...</h2>
 					<div className={Styles.separate__actualities}></div>
-						<div className={Styles.card__actualities}>
+						<div className={Styles.card__actualities} data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
 							<h3>{actualities.attributes?.title}</h3>
 							<p>{actualities.attributes?.content.substring(0, 200)} ...</p>
 							<button className={Styles.btn__actualities}><Link href="/actuality" >Voire plus ...</Link></button>
@@ -127,7 +129,7 @@ export default function Home() {
 				</section>
 
         		<section className={Styles.testimonials}>
-					<h2>Témoignages ...</h2>
+					<h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom">Témoignages ...</h2>
 					<div className={Styles.separate__testimonials}></div>
 					<div className={Styles.testimonials__container}>
 						test

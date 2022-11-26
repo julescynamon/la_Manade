@@ -80,24 +80,24 @@ export default function Activities({ activity }) {
                     >
                     {activity.attributes.image.data.map((image) => (
                         <SwiperSlide key={image.id}>
-                            <div className={Styles.imgActivities}>
-                                <Image src={API_URL + image.attributes.formats.small.url.toString()} alt="" width="600" height="500" />
+                            <div className={Styles.imgActivities} data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                                <Image src={API_URL + image.attributes.formats.small.url.toString()} alt="" width="900" height="500" />
                             </div>
                         </SwiperSlide>
                     ))}
                     </Swiper> ) : (
-                        <div className={Styles.imgActivities}>
+                        <div className={Styles.imgActivities} data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                             <Image src={API_URL + activity.attributes.image.data[0].attributes.formats.small.url.toString()} alt="" width="600" height="500" />
                         </div>
                     )}
-                    <div className={Styles.attractActivities}>
+                    <div className={Styles.attractActivities} data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
                         <h1>{ activity.attributes.title }</h1>
                         <h2>{ activity.attributes.subtitle }</h2>
                         <div>
                             <AiOutlineArrowRight className={Styles.fleche}/>
                         </div>
                     </div>
-                    <div className={Styles.contentActivities}>
+                    <div className={Styles.contentActivities} data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
                         <p>
                             { activity.attributes.content }
                         </p>
