@@ -55,7 +55,7 @@ export default function Home() {
 
 				<section className={Styles.hero}>
 					<video src="/videos/test.mp4" className={Styles.backgroundVideo} autoPlay  loop muted></video>
-					<div className={Styles.context} data-aos="fade-left">
+					<div className={Styles.context}>
 						<p>Plus qu'un travail, une passion !</p>
 						<div className={Styles.cornerRight}></div>
 						<h1 className={Styles.welcomeHero}>Bienvenue, à la Manade du Joncas</h1>

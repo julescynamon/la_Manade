@@ -19,7 +19,7 @@ export default function legales() {
 
                     <section className={Styles.mentions}>
                         <div className={Styles.mentions__header}>
-                            <h1 className={Styles.mentions__title} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <h1 className={Styles.mentions__title}>
                                 mentions Légales</h1>
                             <div className={Styles.mentions__separ}>
                                 <div className={Styles.mentions__separUnderline}></div>

@@ -26,7 +26,7 @@ export default function hebergements(props) {    // on recupere l'url de l'image
                     <div className={Styles.imgRoulotte} data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                         <Image src="/images/roulottes.6f76e8c4.jpg" alt="roulotte" width="600" height="500" />
                     </div>
-                    <div className={Styles.contentRoulotte} data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                    <div className={Styles.contentRoulotte}>
                         <h1>Nos Hébergements ...</h1>
                         <p>Afin de diversifier notre activité, nous vous proposons un hébergement insolite dans nos roulottes.
 

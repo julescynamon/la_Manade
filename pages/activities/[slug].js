@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Header from '../components/Header/Header';
@@ -90,14 +89,14 @@ export default function Activities({ activity }) {
                             <Image src={API_URL + activity.attributes.image.data[0].attributes.formats.small.url.toString()} alt="" width="600" height="500" />
                         </div>
                     )}
-                    <div className={Styles.attractActivities} data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                    <div className={Styles.attractActivities}>
                         <h1>{ activity.attributes.title }</h1>
                         <h2>{ activity.attributes.subtitle }</h2>
                         <div>
                             <AiOutlineArrowRight className={Styles.fleche}/>
                         </div>
                     </div>
-                    <div className={Styles.contentActivities} data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                    <div className={Styles.contentActivities}>
                         <p>
                             { activity.attributes.content }
                         </p>
