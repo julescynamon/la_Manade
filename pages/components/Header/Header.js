@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
+
 import Link from 'next/link';
 import Image from 'next/image';
 import Styles from './Header.module.css';
+
 import { BsChevronUp, BsChevronDown  } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
+
 import NavOver from './components/NavOver';
 
 export default function Header() {
@@ -23,6 +27,7 @@ export default function Header() {
     const [showNav, setShowNav] = useState(false);
     const [addClass, setAddClass] = useState(`${Styles.menu}`);
 
+
     const toggleNav = () => {
         setShowNav(!showNav);
         !showNav ? setAddClass(`${Styles.menu} ${Styles.show}`) : setAddClass(`${Styles.menu}`);
@@ -39,7 +44,8 @@ export default function Header() {
         </div>
         <div className={Styles.headerNav}>
             <nav>
-                <ul className={addClass}>
+                <ul 
+                className={addClass}>
                     <li><Link href="/">Accueil</Link></li>
                     <li onMouseEnter={ toggleNavOver }><Link href="/" id="activities-link">Nos Activitées{ showNavOver ?  <BsChevronDown className={Styles.chevronDown} /> : <BsChevronUp className={Styles.chevronUp}/> }</Link></li>
                     
