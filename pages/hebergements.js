@@ -23,7 +23,7 @@ export default function hebergements(props) {    // on recupere l'url de l'image
             <main>
 
                 <div className={Styles.containerHebergement}>
-                    <div className={Styles.imgRoulotte} data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                    <div className={Styles.imgRoulotte}>
                         <Image src="/images/roulottes.6f76e8c4.jpg" alt="roulotte" width="600" height="500" />
                     </div>
                     <div className={Styles.contentRoulotte}>

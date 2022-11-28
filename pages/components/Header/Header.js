@@ -44,8 +44,7 @@ export default function Header() {
         </div>
         <div className={Styles.headerNav}>
             <nav>
-                <ul 
-                className={addClass}>
+                <ul className={addClass}>
                     <li><Link href="/">Accueil</Link></li>
                     <li onMouseEnter={ toggleNavOver }><Link href="/" id="activities-link">Nos Activitées{ showNavOver ?  <BsChevronDown className={Styles.chevronDown} /> : <BsChevronUp className={Styles.chevronUp}/> }</Link></li>
                     

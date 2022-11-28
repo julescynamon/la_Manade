@@ -79,13 +79,13 @@ export default function Activities({ activity }) {
                     >
                     {activity.attributes.image.data.map((image) => (
                         <SwiperSlide key={image.id}>
-                            <div className={Styles.imgActivities} data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                            <div className={Styles.imgActivities}>
                                 <Image src={API_URL + image.attributes.formats.small.url.toString()} alt="" width="900" height="500" />
                             </div>
                         </SwiperSlide>
                     ))}
                     </Swiper> ) : (
-                        <div className={Styles.imgActivities} data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                        <div className={Styles.imgActivities}>
                             <Image src={API_URL + activity.attributes.image.data[0].attributes.formats.small.url.toString()} alt="" width="600" height="500" />
                         </div>
                     )}

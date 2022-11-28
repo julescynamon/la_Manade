@@ -85,6 +85,7 @@
     right: 0;
     transform: translateX(100%);
     display: none;
+    transition: all .5s ease-in-out;
 }
 
 .show {
@@ -93,6 +94,7 @@
     padding: 6rem;
     transform: translateX(0);
     display: block;
+    transition: all .5s ease-in-out;
 }
 
 .burger {
