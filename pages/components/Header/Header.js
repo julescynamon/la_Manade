@@ -24,15 +24,7 @@ export default function Header() {
     }
 
 
-    const [showNav, setShowNav] = useState(false);
-    const [addClass, setAddClass] = useState(`${Styles.menu}`);
-
-
-    const toggleNav = () => {
-        setShowNav(!showNav);
-        !showNav ? setAddClass(`${Styles.menu} ${Styles.show}`) : setAddClass(`${Styles.menu}`);
-    }
-
+    const [active , setActive] = useState(false);
 
     return (
         <header className={Styles.header}>
@@ -42,21 +34,20 @@ export default function Header() {
                 <h1>La Manade du Joncas</h1>
             </Link>
         </div>
+        <div className={Styles.burger} onClick={() => setActive(!active)}>
+            { active ? <AiOutlineClose className={Styles.close}/>  : <GiHamburgerMenu className={Styles.icon} />}
+        </div>
         <div className={Styles.headerNav}>
             <nav>
-                <ul className={addClass}>
+                <ul className={active ? Styles.show : Styles.menu}>
                     <li><Link href="/">Accueil</Link></li>
                     <li onMouseEnter={ toggleNavOver }><Link href="/" id="activities-link">Nos Activitées{ showNavOver ?  <BsChevronDown className={Styles.chevronDown} /> : <BsChevronUp className={Styles.chevronUp}/> }</Link></li>
-                    
                     { showNavOver ? <NavOver /> : null }
                     <li><Link href="/actuality">Nos Actualitées</Link></li>
                     <li><Link href="/hebergements">Nos Hébergements</Link></li>
                     <li><Link href="/contact">Contact</Link></li>
                 </ul>
             </nav>
-        </div>
-        <div className={Styles.burger} onClick={toggleNav}>
-            { showNav ? <AiOutlineClose className={Styles.close}/>  : <GiHamburgerMenu className={Styles.icon} />}
         </div>
         </header>
     )

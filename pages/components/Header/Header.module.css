@@ -10,7 +10,7 @@
 .headerTitle>a {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     font-family: var(--font-brush);
     font-size: 10px;
     font-weight: 400;
@@ -74,26 +74,26 @@
 
 
 .menu {
-    width: 0;
-    height: 100%;
+    height: 100vh;
     background-color: var(--color-back);
-    margin: 0;
-    padding: 0;
+    z-index: 2;
+    padding: 6rem;
     list-style: none;
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: fixed;
     transform: translateX(100%);
-    display: none;
     transition: all .5s ease-in-out;
 }
 
 .show {
-    width: auto;
+    height: 100vh;
+    background-color: var(--color-back);
     z-index: 2;
     padding: 6rem;
-    transform: translateX(0);
-    display: block;
+    list-style: none;
+    position: fixed;
+    top: 91px;
+    right: 0;
+    transform: translateX(0%);
     transition: all .5s ease-in-out;
 }
 
@@ -110,7 +110,7 @@
     font-size: 28px;
     cursor: pointer;
     z-index: 1000;
-    margin-top: 8px;
+    margin-top: 5px;
     position: absolute;
     right: 1rem;
 }
@@ -120,7 +120,8 @@
 
     .headerNav>nav>ul {
         margin: 0;
-        padding: 0;
+        padding: 10px;
+        padding-top: 22px;
         list-style: none;
     }
 
@@ -137,6 +138,7 @@
 
     .menu {
         width: 100%;
+        height: 100%;
         justify-content: space-between;
         align-items: center;
         display: flex;

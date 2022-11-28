@@ -6,11 +6,12 @@
     background-color: var(--color-back);
     color: var(--white);
     position: absolute;
-    top: 33px;
+    top: 53px;
     left: 82px;
     padding: 20px;
     z-index: 99999 !important;
     border-radius: 5px;
+    transition: all .5s ease-in-out;
 }
 
 .sub>li {
