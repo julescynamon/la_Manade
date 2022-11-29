@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -23,11 +24,27 @@ export default function hebergements(props) {    // on recupere l'url de l'image
             <main>
 
                 <div className={Styles.containerHebergement}>
-                    <div className={Styles.imgRoulotte}>
+                    <motion.div 
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                    className={Styles.imgRoulotte}>
                         <Image src="/images/roulottes.6f76e8c4.jpg" alt="roulotte" width="600" height="500" />
-                    </div>
-                    <div className={Styles.contentRoulotte}>
-                        <h1>Nos Hébergements ...</h1>
+                    </motion.div>
+                    <motion.div 
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ 
+                        duration: 1,
+                        staggierChildren: 0.75,
+
+                    }}
+                    className={Styles.contentRoulotte}>
+                        <motion.h1
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                        >Nos Hébergements ...</motion.h1>
                         <p>Afin de diversifier notre activité, nous vous proposons un hébergement insolite dans nos roulottes.
 
                             Placées sur les bords du lac de 4 Ha, vous êtes aux premières loges pour apercevoir les taureaux qui
@@ -42,7 +59,7 @@ export default function hebergements(props) {    // on recupere l'url de l'image
                             est assuré.
 
                             Pour plus de renseignements visitez notre site : <a href="http://www.locationderoulotte.fr/">http://www.locationderoulotte.fr/</a></p>
-                    </div>
+                    </motion.div>
                 </div>
 
             </main>

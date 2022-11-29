@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -43,15 +44,27 @@ export default function Actuality() {
 
 				<div className={Styles.actualitiesContainer}>
 
-					<div className={Styles.card}>
+					<motion.div 
+					initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ 
+                        duration: 1,
+                        staggierChildren: 0.75,
+
+                    }}
+					className={Styles.card}>
 						<div className={Styles.image}>
 						{ isLoading ? <p>Chargement...</p> : <Image src={API_URL + newImg} alt="image" width={500} height={500}/> }
 							
 						</div>
-						<h1>{actualities.attributes?.title}</h1>
+						<motion.h1
+						initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+						>{actualities.attributes?.title}</motion.h1>
 						<p>{actualities.attributes?.content}</p>
 						<h3>Suivez nos actualités <a href="https://www.facebook.com/manadedu.joncas">ici</a></h3>
-					</div>
+					</motion.div>
 
 				</div>
 

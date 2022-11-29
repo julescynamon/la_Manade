@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 import Styles from '../styles/Home.module.css';
 import Header from './components/Header/Header';
@@ -55,19 +56,27 @@ export default function Home() {
 
 				<section className={Styles.hero}>
 					<video src="/videos/test.mp4" className={Styles.backgroundVideo} autoPlay  loop muted></video>
-					<div className={Styles.context}>
+					<motion.div
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					transition={{ duration: 1 }}
+					className={Styles.context}>
 						<p>Plus qu'un travail, une passion !</p>
 						<div className={Styles.cornerRight}></div>
 						<h1 className={Styles.welcomeHero}>Bienvenue, à la Manade du Joncas</h1>
 						<p>Réception, animations, produits de la ferme et bien plus !</p>
 						<a href="#" className={Styles.moreHero}>Voire Plus ...</a>
 						<div className={Styles.cornerLeft}></div>
-					</div>
+					</motion.div>
 				</section>
 
 				<section className={Styles.about}>
 					<div className={Styles.content__about}>
-						<h2>À Propos de nous...</h2>
+						<motion.h2 
+							initial={{ opacity: 0, y: 100 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 1 }}
+						>À Propos de nous...</motion.h2>
 						<div className={Styles.separate}></div>
 						<p>
 							C'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard,
@@ -96,9 +105,17 @@ export default function Home() {
 				</section>
 
 				<section className={Styles.activities}>
-					<h2>Nos Services ...</h2>
+					<motion.h2
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 1 }}
+					>Nos Services ...</motion.h2>
 					<div className={Styles.separate__services}></div>
-					<div className={Styles.containerActivities}>
+					<motion.div 
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					transition={{ duration: 1 }}
+					className={Styles.containerActivities}>
 						{activities.map((activity) => (
 							<div className={Styles.cardActivities} key={activity.id}>
 								<h3>{activity.attributes.title}</h3>
@@ -113,11 +130,15 @@ export default function Home() {
 								</p>
 								<button className={Styles.btnAction}><Link href="/hebergements" >Voire plus ...</Link></button>
 							</div>
-					</div>
+					</motion.div>
 				</section>
 
 				<section className={Styles.actualities}>
-					<h2>Dernières Actualitées ...</h2>
+					<motion.h2
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 1 }}
+					>Dernières Actualitées ...</motion.h2>
 					<div className={Styles.separate__actualities}></div>
 						<div className={Styles.card__actualities}>
 							<h3>{actualities.attributes?.title}</h3>
@@ -127,7 +148,11 @@ export default function Home() {
 				</section>
 
         		<section className={Styles.testimonials}>
-					<h2>Témoignages ...</h2>
+					<motion.h2
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 1 }}
+					>Témoignages ...</motion.h2>
 					<div className={Styles.separate__testimonials}></div>
 					<div className={Styles.testimonials__container}>
 						test

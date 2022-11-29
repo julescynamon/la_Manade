@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -20,7 +21,11 @@ export default function custom404() {
         <main>
 
             <div className={Styles.errorPage}>
-                <h1>Oops !</h1>
+                <motion.h1
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                >Oops !</motion.h1>
                 <h2>La page que vous recherchez n'existe pas.</h2>
                 <p>Retournez sur le site <Link href="/">ici</Link> ou <Link href="/contact">Contactez-nous</Link> pour nous parler du problème rencontré</p>
             </div>

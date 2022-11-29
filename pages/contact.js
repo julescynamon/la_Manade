@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { motion } from "framer-motion";
 
 import Head from 'next/head';
 import Header from './components/Header/Header';
@@ -76,13 +77,21 @@ export default function Contact() {
 			<main>
 
 				<div className={Styles.contactContainer} >
-					<div className={Styles.containerContent}>
+					<motion.div 
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 1 }}
+					className={Styles.containerContent}>
 						<h1>Contactez-nous</h1>
 						<div className={Styles.carte}>
 							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2862.2799521186203!2d4.470037515136579!3d44.1600891275237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5ae00aebf3119%3A0x251650bf87108615!2sLa%20Manade%20du%20Joncas!5e0!3m2!1sfr!2sfr!4v1664437450437!5m2!1sfr!2sfr" width="350" height="300" style={{border: 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 						</div>
-					</div>
-					<div className={Styles.containerForm}>
+					</motion.div>
+					<motion.div 
+					initial={{ opacity: 0, y: -100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 1 }}
+					className={Styles.containerForm}>
 						<form ref={form} onSubmit={handleSubmit(submit)}>
 							<div className={Styles.group1}>
 								<div className={Styles.formGroup}>
@@ -105,7 +114,7 @@ export default function Contact() {
 							<p className={Styles.succesMessage}>{ validation }</p>
 							<p className={Styles.errorMessage}>{ errorMessage }</p>
 						</form>
-					</div>
+					</motion.div>
 				</div>
 
 			</main>
