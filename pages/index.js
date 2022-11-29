@@ -65,13 +65,13 @@ export default function Home() {
 						<div className={Styles.cornerRight}></div>
 						<h1 className={Styles.welcomeHero}>Bienvenue, à la Manade du Joncas</h1>
 						<p>Réception, animations, produits de la ferme et bien plus !</p>
-						<a href="#" className={Styles.moreHero}>Voire Plus ...</a>
+						<a href="#about" className={Styles.moreHero}>Voire Plus ...</a>
 						<div className={Styles.cornerLeft}></div>
 					</motion.div>
 				</section>
 
 				<section className={Styles.about}>
-					<div className={Styles.content__about}>
+					<div className={Styles.content__about} id="about">
 						<motion.h2 
 							initial={{ opacity: 0, y: 100 }}
 							whileInView={{ opacity: 1, y: 0 }}

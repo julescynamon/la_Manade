@@ -41,7 +41,7 @@ export default function Header() {
             <nav>
                 <ul className={active ? Styles.show : Styles.menu}>
                     <li><Link href="/">Accueil</Link></li>
-                    <li onMouseEnter={ toggleNavOver }><Link href="/" id="activities-link">Nos Activitées{ showNavOver ?  <BsChevronDown className={Styles.chevronDown} /> : <BsChevronUp className={Styles.chevronUp}/> }</Link></li>
+                    <li onMouseEnter={ toggleNavOver }><Link href="#" id="activities-link">Nos Activitées{ showNavOver ?  <BsChevronDown className={Styles.chevronDown} /> : <BsChevronUp className={Styles.chevronUp}/> }</Link></li>
                     { showNavOver ? <NavOver /> : null }
                     <li><Link href="/actuality">Nos Actualitées</Link></li>
                     <li><Link href="/hebergements">Nos Hébergements</Link></li>
