@@ -9,7 +9,7 @@ import Styles from '../styles/Hebergements.module.css';
 
 
 
-export default function hebergements(props) {    // on recupere l'url de l'image
+export default function hebergements() {    // on recupere l'url de l'image
 
 
     return (

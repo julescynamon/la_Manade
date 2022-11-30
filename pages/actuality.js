@@ -10,24 +10,25 @@ import Styles from '../styles/Actualities.module.css';
 import { getActualities } from './api/actualitiesAPI';
 import { API_URL } from '../config/config';
 
-
-export default function Actuality() {
-
-	const [isLoading, setIsLoading] = useState(true);
-	const [ actualities, setActualities ] = useState([]);
-
-	const fetchActualities = async () => {
-		const data = await getActualities();
-		const lastActualities = data.data[data.data.length - 1];
-		setActualities(lastActualities);
-		setIsLoading(false);
+export async function getStaticProps() {
+	const data = await getActualities();
+	const actualities = data.data[data.data.length - 1];
+	const lastActualities = actualities.attributes;
+	return {
+		props: {
+			lastActualities,
+		},
+		revalidate: 10,
 	};
 
-	useEffect(() => {
-		fetchActualities();
-	}, []);
+}
 
-	const image = actualities.attributes?.image.data;
+
+export default function Actuality({lastActualities}) {
+
+	const [isLoading, setIsLoading] = useState(true);
+
+	const image = lastActualities.image.data;
 	const newImg = image?.attributes.formats.small.url.toString();
 
 
@@ -54,15 +55,14 @@ export default function Actuality() {
                     }}
 					className={Styles.card}>
 						<div className={Styles.image}>
-						{ isLoading ? <p>Chargement...</p> : <Image src={API_URL + newImg} alt="image" width={500} height={500}/> }
-							
+						{ newImg ? <Image src={API_URL + newImg} alt="image" width={500} height={500}/> : <Image src="/images/priscilla-du-preez-tGtWKDdicn4-unsplash.jpg" alt="image" width={500} height={500}/> }
 						</div>
 						<motion.h1
 						initial={{ opacity: 0, y: 100 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
-						>{actualities.attributes?.title}</motion.h1>
-						<p>{actualities.attributes?.content}</p>
+						>{lastActualities.title}</motion.h1>
+						<p>{lastActualities.content}</p>
 						<h3>Suivez nos actualités <a href="https://www.facebook.com/manadedu.joncas">ici</a></h3>
 					</motion.div>
 

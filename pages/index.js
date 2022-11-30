@@ -13,33 +13,26 @@ import { ImQuotesRight } from 'react-icons/im';
 import { getActualities } from './api/actualitiesAPI';
 import { getActivities } from './api/activitiesAPI';
 
-
-
-export default function Home() {
-
-	const [isLoading, setIsLoading] = useState(true);
-	const [ actualities, setActualities ] = useState([]);
-	const [ activities, setActivities ] = useState([]);
-
-	const fetchActualities = async () => {
+export async function getStaticProps() {
+		const activitiesData = await getActivities();
+		const activities = activitiesData.data;
 		const data = await getActualities();
 		const lastActualities = data.data[data.data.length - 1];
-		setActualities(lastActualities);
-		setIsLoading(false);
-	};
-
-	const fetchActivities = async () => {
-		const data = await getActivities();
-		setActivities(data.data);
-		setIsLoading(false);
-	};
-
+		const lastActualitiesData = lastActualities.attributes;
+			return {
+				props: {
+					lastActualitiesData,
+					activities,
+				},
+			};
+	}
 
 
-	useEffect(() => {
-		fetchActualities();
-		fetchActivities();
-	}, []);
+
+
+export default function Home({ lastActualitiesData, activities }) {
+
+	const [isLoading, setIsLoading] = useState(true);
 
 
 	return (
@@ -141,8 +134,8 @@ export default function Home() {
 					>Dernières Actualitées ...</motion.h2>
 					<div className={Styles.separate__actualities}></div>
 						<div className={Styles.card__actualities}>
-							<h3>{actualities.attributes?.title}</h3>
-							<p>{actualities.attributes?.content.substring(0, 200)} ...</p>
+							<h3>{lastActualitiesData.title}</h3>
+							<p>{lastActualitiesData.content.substring(0, 200)} ...</p>
 							<button className={Styles.btn__actualities}><Link href="/actuality" >Voire plus ...</Link></button>
 						</div>
 				</section>

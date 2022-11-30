@@ -59,8 +59,8 @@ export default function Activities({ activity }) {
     return (
         <>
             <Head>
-                    <title>La Manade du Joncas - Actualitées</title>
-                    <meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur. Découvrez nos dérnières actualitées" />
+                    <title>La Manade du Joncas - Activitées</title>
+                    <meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur. Découvrez nos activitées" />
             </Head>
 
             <Header />
@@ -90,7 +90,7 @@ export default function Activities({ activity }) {
                     {activity.attributes.image.data.map((image) => (
                         <SwiperSlide key={image.id}>
                             <div className={Styles.imgActivities}>
-                                <Image src={API_URL + image.attributes.formats.small.url.toString()} alt="" width="900" height="500" />
+                                <Image src={API_URL + image.attributes.formats.small.url.toString()} alt="" width="600" height="500" quality={70} />
                             </div>
                         </SwiperSlide>
                     ))}

@@ -34,7 +34,10 @@ export default function Header() {
                 <h1>La Manade du Joncas</h1>
             </Link>
         </div>
-        <div className={Styles.burger} onClick={() => setActive(!active)}>
+        <div className={Styles.burger} onClick={() => {
+                                                            setActive(!active)
+                                                            active ? document.body.style.overflow = 'auto' : document.body.style.overflow = 'hidden'
+                                                        }}>
             { active ? <AiOutlineClose className={Styles.close}/>  : <GiHamburgerMenu className={Styles.icon} />}
         </div>
         <div className={Styles.headerNav}>
