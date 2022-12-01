@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Script from 'next/script';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -41,6 +42,7 @@ export default function Home({ lastActualitiesData, activities }) {
 				<title>La Manade du Joncas - Ferme Taurine</title>
 				<meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur." />
 				<link rel="icon" href="/favicon.ico" />
+				
 			</Head>
 
 			<Header />
@@ -58,7 +60,7 @@ export default function Home({ lastActualitiesData, activities }) {
 						<div className={Styles.cornerRight}></div>
 						<h1 className={Styles.welcomeHero}>Bienvenue, à la Manade du Joncas</h1>
 						<p>Réception, animations, produits de la ferme et bien plus !</p>
-						<a href="#about" className={Styles.moreHero}>Voire Plus ...</a>
+						<a href="#about" className={Styles.moreHero}>Voir Plus ...</a>
 						<div className={Styles.cornerLeft}></div>
 					</motion.div>
 				</section>
@@ -91,8 +93,8 @@ export default function Home({ lastActualitiesData, activities }) {
 						</p>
 
 						<div className={Styles.about__img}>
-							<Image className={Styles.image__back} src="/images/imgBack.jpg" alt="taureaux en pleine nature" width="600" height="500"/>
-							<Image className={Styles.image__front} src="/images/imgFront.jpg" alt="taureaux en pleine nature" width="600" height="500"/>
+							<Image className={Styles.image__back} src="/images/imgBack.jpg" alt="taureaux en pleine nature" width="600" height="500" alt="taureaux en plein nature"/>
+							<Image className={Styles.image__front} src="/images/imgFront.jpg" alt="taureaux en pleine nature" width="600" height="500" alt="taureaux en plein nature"/>
 						</div>
 					</div>
 				</section>
@@ -136,7 +138,7 @@ export default function Home({ lastActualitiesData, activities }) {
 						<div className={Styles.card__actualities}>
 							<h3>{lastActualitiesData.title}</h3>
 							<p>{lastActualitiesData.content.substring(0, 200)} ...</p>
-							<button className={Styles.btn__actualities}><Link href="/actuality" >Voire plus ...</Link></button>
+							<button className={Styles.btn__actualities}><Link href="/actuality" >Voir plus ...</Link></button>
 						</div>
 				</section>
 
@@ -147,9 +149,8 @@ export default function Home({ lastActualitiesData, activities }) {
 					transition={{ duration: 1 }}
 					>Témoignages ...</motion.h2>
 					<div className={Styles.separate__testimonials}></div>
-					<div className={Styles.testimonials__container}>
-						test
-					</div>
+					
+
 				</section>
 				
 			</main>

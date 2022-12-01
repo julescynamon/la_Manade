@@ -175,7 +175,7 @@
 }
 
 .about__img {
-    width: 375px;
+    width: 370px;
     height: 721px;
     flex-direction: column;
     place-content: center;
@@ -415,7 +415,7 @@
     color: var(--white);
     padding-bottom: 4px;
     font-family: var(--font);
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 24px;
     text-decoration: none;
@@ -519,10 +519,4 @@
     width: 70px;
     border-top: 3px solid var(--color-secondary);
     margin: 13px auto;
-}
-
-.quotes {
-    color: var(--color-primary);
-    margin-right: 1rem;
-    font-size: 3rem;
 }

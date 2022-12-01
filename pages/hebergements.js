@@ -29,7 +29,7 @@ export default function hebergements() {    // on recupere l'url de l'image
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1 }}
                     className={Styles.imgRoulotte}>
-                        <Image src="/images/roulottes.6f76e8c4.jpg" alt="roulotte" width="600" height="500" />
+                        <Image src="/images/roulottes.6f76e8c4.jpg" alt="roulotte en pleine nature" width="600" height="500" />
                     </motion.div>
                     <motion.div 
                     initial={{ opacity: 0, x: 100 }}
