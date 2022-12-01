@@ -49,6 +49,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: var(--color-primary);
+}
+
 /* css des inputs de la page contact */
 
 ::-webkit-input-placeholder {

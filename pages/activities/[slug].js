@@ -1,3 +1,5 @@
+import ReactMarkdown from "react-markdown";
+
 import Head from 'next/head';
 import Image from 'next/image';
 import Header from '../components/Header/Header';
@@ -45,7 +47,8 @@ export async function getStaticProps({ params }) {
     });
     return {
         props: {
-            activity
+            activity,
+            fallback: false,
         }
     }
 }
@@ -55,6 +58,7 @@ export async function getStaticProps({ params }) {
 
 export default function Activities({ activity }) {
 
+    console.log(activity);
 
     return (
         <>
@@ -122,7 +126,7 @@ export default function Activities({ activity }) {
                     </div>
                     <div className={Styles.contentActivities}>
                         <p>
-                            { activity.attributes.content }
+                        <ReactMarkdown children={activity.attributes.content} />
                         </p>
                     </div>
                 </motion.div>
