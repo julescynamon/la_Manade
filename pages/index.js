@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import Testimonial from 'react-testimonial';
+
 import Head from 'next/head';
 import Link from 'next/link';
 import Script from 'next/script';
@@ -8,11 +10,22 @@ import { motion } from 'framer-motion';
 import Styles from '../styles/Home.module.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import { ImQuotesRight } from 'react-icons/im';
+import { RiDoubleQuotesR } from 'react-icons/ri';
+import { RiStarSFill } from 'react-icons/ri';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// import required modules
+import { Pagination, Navigation } from "swiper";
 
 
 import { getActualities } from './api/actualitiesAPI';
 import { getActivities } from './api/activitiesAPI';
+import { getGoogleReviews } from './api/googleReviewsAPI';
 
 export async function getStaticProps() {
 		const activitiesData = await getActivities();
@@ -20,10 +33,13 @@ export async function getStaticProps() {
 		const data = await getActualities();
 		const lastActualities = data.data[data.data.length - 1];
 		const lastActualitiesData = lastActualities.attributes;
+		const dataReviews = await getGoogleReviews();
+		const googleReviewsData = dataReviews.result.reviews;
 			return {
 				props: {
 					lastActualitiesData,
 					activities,
+					googleReviewsData,
 				},
 			};
 	}
@@ -31,10 +47,11 @@ export async function getStaticProps() {
 
 
 
-export default function Home({ lastActualitiesData, activities }) {
+export default function Home({ lastActualitiesData, activities, googleReviewsData }) {
 
 	const [isLoading, setIsLoading] = useState(true);
-
+	const newReviews = googleReviewsData.filter((review) => review.rating >= 4);
+	console.log(newReviews);
 
 	return (
 		<>
@@ -149,8 +166,48 @@ export default function Home({ lastActualitiesData, activities }) {
 					transition={{ duration: 1 }}
 					>Témoignages ...</motion.h2>
 					<div className={Styles.separate__testimonials}></div>
-					
-
+						<Swiper
+						slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        navigation={true}
+                        modules={[Pagination, Navigation]}
+                        className={Styles.swiper}
+						>
+							{newReviews.map((review) => (
+								<SwiperSlide key={review.author_name}>
+									<div className={Styles.testimonials__card}>
+										<div className={Styles.card__header}>
+											<div className={Styles.header__img}>
+												<Image src={review.profile_photo_url} alt="photo de la personne" width="100" height="100" alt="photo de la personne"/>
+												<h2>{review.author_name}</h2>
+												{ review.rating === 5 ? (
+													<div className={ Styles.star }>
+														<RiStarSFill/> 
+														<RiStarSFill/> 
+														<RiStarSFill/> 
+														<RiStarSFill/> 
+														<RiStarSFill/>
+													</div> ) : (
+													<div className={ Styles.star }>
+														<RiStarSFill/> 
+														<RiStarSFill/> 
+														<RiStarSFill/> 
+														<RiStarSFill/>
+													</div> ) }
+											</div>
+											<div className={Styles.card__text}>
+												<p>{review.text}</p>
+												<span className={Styles.date}>{review.relative_time_description}</span>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+							))}
+						</Swiper>
 				</section>
 				
 			</main>
