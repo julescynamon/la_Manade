@@ -43,11 +43,6 @@ export default function hebergements({ hebergements }) {
         return image.medium.url.toString();
     });
 
-    console.log(images);
-
-
-
-
     return (
         <>
             <Head>
