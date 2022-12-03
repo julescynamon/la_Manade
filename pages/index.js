@@ -1,16 +1,11 @@
-import { useState, useEffect } from 'react';
-import Testimonial from 'react-testimonial';
-
 import Head from 'next/head';
 import Link from 'next/link';
-import Script from 'next/script';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import Styles from '../styles/Home.module.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import { RiDoubleQuotesR } from 'react-icons/ri';
 import { RiStarSFill } from 'react-icons/ri';
 
 // Import Swiper React components
@@ -19,8 +14,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 
 import { getActualities } from './api/actualitiesAPI';
@@ -49,9 +45,8 @@ export async function getStaticProps() {
 
 export default function Home({ lastActualitiesData, activities, googleReviewsData }) {
 
-	const [isLoading, setIsLoading] = useState(true);
 	const newReviews = googleReviewsData.filter((review) => review.rating >= 4);
-	console.log(newReviews);
+
 
 	return (
 		<>
@@ -164,7 +159,7 @@ export default function Home({ lastActualitiesData, activities, googleReviewsDat
 					initial={{ opacity: 0, y: 100 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}
-					>Témoignages ...</motion.h2>
+					>Nos 5 derniers témoignages ...</motion.h2>
 					<div className={Styles.separate__testimonials}></div>
 						<Swiper
 						slidesPerView={1}
@@ -174,7 +169,8 @@ export default function Home({ lastActualitiesData, activities, googleReviewsDat
                         clickable: true,
                         }}
                         navigation={true}
-                        modules={[Pagination, Navigation]}
+                        modules={[Pagination, Navigation, Autoplay]}
+						autoPlay={true}
                         className={Styles.swiper}
 						>
 							{newReviews.map((review) => (
@@ -182,7 +178,7 @@ export default function Home({ lastActualitiesData, activities, googleReviewsDat
 									<div className={Styles.testimonials__card}>
 										<div className={Styles.card__header}>
 											<div className={Styles.header__img}>
-												<Image src={review.profile_photo_url} alt="photo de la personne" width="100" height="100" alt="photo de la personne"/>
+												<Image src={review.profile_photo_url} alt="photo de la personne" width="100" height="100"/>
 												<h2>{review.author_name}</h2>
 												{ review.rating === 5 ? (
 													<div className={ Styles.star }>

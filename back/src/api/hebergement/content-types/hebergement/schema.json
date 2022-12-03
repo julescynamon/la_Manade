@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hebergements",
+  "info": {
+    "singularName": "hebergement",
+    "pluralName": "hebergements",
+    "displayName": "hebergement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

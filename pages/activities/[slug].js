@@ -125,9 +125,7 @@ export default function Activities({ activity }) {
                         </div>
                     </div>
                     <div className={Styles.contentActivities}>
-                        <p>
                         <ReactMarkdown children={activity.attributes.content} />
-                        </p>
                     </div>
                 </motion.div>
 

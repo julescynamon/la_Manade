@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import Head from 'next/head';
@@ -26,7 +25,6 @@ export async function getStaticProps() {
 
 export default function Actuality({lastActualities}) {
 
-	const [isLoading, setIsLoading] = useState(true);
 
 	const image = lastActualities.image.data;
 	const newImg = image?.attributes.formats.small.url.toString();
