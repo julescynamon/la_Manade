@@ -81,6 +81,7 @@ export default function Activities({ activity }) {
                 }}
                 className={Styles.activitiesContainer}>
                     {activity.attributes.image.data.length >= 2 ? ( <Swiper
+                        modules={[Pagination, Navigation]}
                         slidesPerView={1}
                         spaceBetween={30}
                         loop={true}
@@ -88,7 +89,6 @@ export default function Activities({ activity }) {
                         clickable: true,
                         }}
                         navigation={true}
-                        modules={[Pagination, Navigation]}
                         className={Styles.swiper}
                     >
                     {activity.attributes.image.data.map((image) => (

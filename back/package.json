@@ -16,6 +16,7 @@
     "@strapi/plugin-users-permissions": "4.5.1",
     "@strapi/strapi": "4.5.1",
     "better-sqlite3": "7.4.6",
+    "strapi-plugin-cookie-manager": "^1.0.8",
     "strapi-plugin-sitemap": "^2.0.8"
   },
   "author": {
