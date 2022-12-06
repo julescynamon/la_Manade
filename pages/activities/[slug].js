@@ -48,8 +48,9 @@ export async function getStaticProps({ params }) {
     return {
         props: {
             activity,
-            fallback: false,
-        }
+        },
+        revalidate: 10,
+
     }
 }
 

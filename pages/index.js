@@ -37,6 +37,7 @@ export async function getStaticProps() {
 					activities,
 					googleReviewsData,
 				},
+				revalidate: 10,
 			};
 	}
 
@@ -46,7 +47,6 @@ export async function getStaticProps() {
 export default function Home({ lastActualitiesData, activities, googleReviewsData }) {
 
 	const newReviews = googleReviewsData.filter((review) => review.rating >= 4);
-
 
 	return (
 		<>

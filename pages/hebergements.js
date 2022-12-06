@@ -28,8 +28,8 @@ export async function getStaticProps() {
     return {
         props: {
             hebergements,
-            fallback: true,
         },
+        revalidate: 10,
     };
 }
 
