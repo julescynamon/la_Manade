@@ -2,12 +2,10 @@ import { motion } from 'framer-motion';
 
 import Head from 'next/head';
 import Image from 'next/image';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import Styles from '../styles/Actualities.module.css';
 
 import { getActualities } from './api/actualitiesAPI';
-import { API_URL } from '../config/config';
+
 
 export async function getStaticProps() {
 	const data = await getActualities();
@@ -18,14 +16,13 @@ export async function getStaticProps() {
 			lastActualities,
 		},
 		revalidate: 10,
-	};
-
+	}
 }
 
 
-export default function Actuality({lastActualities}) {
+export default function Actuality({ lastActualities}) {
 
-
+	
 	const image = lastActualities.image.data;
 	const newImg = image?.attributes.formats.small.url.toString();
 
@@ -36,8 +33,6 @@ export default function Actuality({lastActualities}) {
                     <title>La Manade du Joncas - Actualitées</title>
                     <meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur. Découvrez nos dérnières actualitées" />
             </Head>
-
-            <Header />
 
             <main>
 
@@ -68,7 +63,6 @@ export default function Actuality({lastActualities}) {
 
             </main>
 
-            <Footer />
         </>
     )
 }

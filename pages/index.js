@@ -56,7 +56,7 @@ export default function Home({ lastActualitiesData, activities, googleReviewsDat
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Header />
+
 
 			<main>
 
@@ -206,7 +206,7 @@ export default function Home({ lastActualitiesData, activities, googleReviewsDat
 				</section>
 				
 			</main>
-			<Footer />
+
 		</>
 	)
 }

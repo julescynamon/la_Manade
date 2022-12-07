@@ -4,8 +4,6 @@ import { motion } from 'framer-motion';
 
 import Head from 'next/head';
 import Image from 'next/image';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import Styles from '../styles/Hebergements.module.css';
 
 // Import Swiper React components
@@ -23,7 +21,7 @@ import { API_URL } from '../config/config';
 
 export async function getStaticProps() {
     const data = await getHebergements();
-    const hebergements = data.hebergements.data[0].attributes;
+    const hebergements = data[0].attributes;
 
     return {
         props: {
@@ -50,8 +48,6 @@ export default function hebergements({ hebergements }) {
                     <meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur. Venez découvrir nos roulottes pour passer un moment au calme coupé de la folie du monde extèrieur." />
             </Head>
 
-            <Header />
-
             <main>
 
                 <div className={Styles.containerHebergement}>
@@ -74,11 +70,7 @@ export default function hebergements({ hebergements }) {
                     > 
                         {images.map((image, index) => (
                             <SwiperSlide key={index}>
-                                <Image src={API_URL + image} alt="roulotte" fill
-                                        sizes="(max-width: 900px) 100vw,
-                                                (max-width: 1200px) 50vw,
-                                                33vw" 
-                                />
+                                <Image src={API_URL + image} alt="roulotte" width="600" height="500" />
                             </SwiperSlide>
                         ))}
                     </Swiper> ) : (
@@ -107,7 +99,6 @@ export default function hebergements({ hebergements }) {
 
             </main>
 
-            <Footer />
         </>
     )
 }

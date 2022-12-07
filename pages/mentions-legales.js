@@ -14,7 +14,7 @@ export default function legales() {
 				<meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux. Mentions Légales du site." />
 			</Head>
 
-			<Header />
+
                 <main>
 
                     <section className={Styles.mentions}>
@@ -216,7 +216,7 @@ export default function legales() {
                         </section>
 
                     </main>
-                <Footer />
+
             </>
 
     )

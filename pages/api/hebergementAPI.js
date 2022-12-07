@@ -1,34 +1,38 @@
 import { API_URL } from '../../config/config';
+import axios from 'axios';
 
 export async function getHebergements() {
-    const fetchParams = {
-		method: 'post',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({
-			query: `{
-                hebergements {
-                data{
-                    attributes{
-                        title
-                        content
-                        image {
+    const query = `
+    query {
+        hebergements {
+            data {
+                attributes {
+                    title
+                    content
+                    image {
                         data {
                             attributes {
                             formats 
                             }
                         }
-                        }
-                    }
                     }
                 }
-            }`
-		})
-	}
+            }
+        }
+    }`;
 
-	const res = await fetch(`${API_URL}/graphql`, fetchParams);
-	const {data} = await res.json();
+    const options = {
+        url: `${API_URL}/graphql`,
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        data: JSON.stringify({ query }),
+    };
 
-    return data;
+    const response = await axios(options);
+    const hebergements = response.data.data.hebergements.data;
+    return hebergements;
+
 }
+

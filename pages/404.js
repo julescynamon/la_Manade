@@ -16,7 +16,7 @@ export default function custom404() {
                 <meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur. Découvrez nos dérnières actualitées" />
         </Head>
 
-        <Header />
+
 
         <main>
 
@@ -32,7 +32,7 @@ export default function custom404() {
 
         </main>
 
-        <Footer />
+
     </>
     )
 }
