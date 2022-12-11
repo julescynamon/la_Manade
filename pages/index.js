@@ -27,13 +27,12 @@ export async function getStaticProps() {
 		const activitiesData = await getActivities();
 		const activities = activitiesData.data;
 		const data = await getActualities();
-		const lastActualities = data.data[data.data.length - 1];
-		const lastActualitiesData = lastActualities.attributes;
+		const lastActualities = data.slice(-1)[0].attributes;
 		const dataReviews = await getGoogleReviews();
 		const googleReviewsData = dataReviews.result.reviews;
 			return {
 				props: {
-					lastActualitiesData,
+					lastActualities,
 					activities,
 					googleReviewsData,
 				},
@@ -44,7 +43,7 @@ export async function getStaticProps() {
 
 
 
-export default function Home({ lastActualitiesData, activities, googleReviewsData }) {
+export default function Home({ lastActualities, activities, googleReviewsData }) {
 
 	const newReviews = googleReviewsData.filter((review) => review.rating >= 4);
 
@@ -147,8 +146,8 @@ export default function Home({ lastActualitiesData, activities, googleReviewsDat
 					>Dernières Actualitées ...</motion.h2>
 					<div className={Styles.separate__actualities}></div>
 						<div className={Styles.card__actualities}>
-							<h3>{lastActualitiesData.title}</h3>
-							<p>{lastActualitiesData.content.substring(0, 200)} ...</p>
+							<h3>{lastActualities.title}</h3>
+							<p>{lastActualities.content.substring(0, 200)} ...</p>
 							<button className={Styles.btn__actualities}><Link href="/actuality" >Voir plus ...</Link></button>
 						</div>
 				</section>
