@@ -2,8 +2,6 @@ import ReactMarkdown from "react-markdown";
 
 import Head from 'next/head';
 import Image from 'next/image';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
 import Styles from '../../styles/Activities.module.css';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
@@ -57,8 +55,6 @@ export async function getStaticProps({ params }) {
 
 
 export default function Activities({ activity }) {
-
-    console.log(activity);
 
     return (
         <>
