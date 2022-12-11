@@ -21,6 +21,7 @@
 .imgActivities {
     height: 500px;
     grid-area: img;
+    overflow: hidden;
 }
 
 .imgActivities>img {

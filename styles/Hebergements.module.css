@@ -23,6 +23,7 @@
     grid-area: img;
     overflow: hidden;
     box-shadow: 0 0 10px #0003;
+    overflow: hidden;
 }
 
 .imgRoulotte>img {

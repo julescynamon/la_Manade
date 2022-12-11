@@ -8,21 +8,19 @@ import { getActualities } from './api/actualitiesAPI';
 
 
 export async function getStaticProps() {
-	const data = await getActualities();
-	const actualities = data.data[data.data.length - 1];
-	const lastActualities = actualities.attributes;
+	const actualities = await getActualities();
+	const lastActualities = actualities.slice(-1)[0].attributes
 	return {
 		props: {
 			lastActualities,
 		},
 		revalidate: 10,
-	}
+	};
 }
 
 
 export default function Actuality({ lastActualities}) {
 
-	
 	const image = lastActualities.image.data;
 	const newImg = image?.attributes.formats.small.url.toString();
 
