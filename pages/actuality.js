@@ -20,11 +20,7 @@ export async function getStaticProps() {
 			revalidate: 10,
 		};
 	} catch (error) {
-		return {
-			props: {
-				actualities: [],
-			}
-		}
+		return console.log(error);
 	}
 }
 

@@ -25,7 +25,7 @@ export async function getStaticProps() {
 		const activitiesData = await getActivities();
 		const activities = activitiesData.data;
 		const data = await getActualities();
-		const lastActualities = data.slice(-1)[0].attributes;
+		const lastActualities = data?.slice(-1)[0]?.attributes ?? [];
 		const dataReviews = await getGoogleReviews();
 		const googleReviewsData = dataReviews.result.reviews;
 			return {
@@ -143,19 +143,19 @@ export default function Home({ lastActualities, activities, googleReviewsData })
 					transition={{ duration: 1 }}
 					>Dernières Actualitées ...</motion.h2>
 					<div className={Styles.separate__actualities}></div>
-						{ !lastActualities ?  (
+						{ lastActualities.length ?  (
 							<div className={Styles.card__actualities}>
-							<h3>Oops...</h3>
-							<p>Pas d'actualtées pour le moment ...</p>
-						</div>
+								<h3>{lastActualities.title}</h3>
+								<p>{lastActualities.content.substring(0, 200)} ...</p>
+								<button className={Styles.btn__actualities}><Link href="/actuality" >Voir plus ...</Link></button>
+							</div>	
 						) : (
 							<div className={Styles.card__actualities}>
-							<h3>{lastActualities.title}</h3>
-							<p>{lastActualities.content.substring(0, 200)} ...</p>
-							<button className={Styles.btn__actualities}><Link href="/actuality" >Voir plus ...</Link></button>
-						</div>
+								<h3>Oops...</h3>
+								<p>Pas d'actualtées pour le moment ...</p>
+							</div>
 						) }
-						
+
 				</section>
 
         		<section className={Styles.testimonials}>
