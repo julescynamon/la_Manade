@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import Styles from '../styles/Home.module.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import { RiStarSFill } from 'react-icons/ri';
 
 // Import Swiper React components
@@ -145,11 +143,19 @@ export default function Home({ lastActualities, activities, googleReviewsData })
 					transition={{ duration: 1 }}
 					>Dernières Actualitées ...</motion.h2>
 					<div className={Styles.separate__actualities}></div>
-						<div className={Styles.card__actualities}>
+						{ !lastActualities ?  (
+							<div className={Styles.card__actualities}>
+							<h3>Oops...</h3>
+							<p>Pas d'actualtées pour le moment ...</p>
+						</div>
+						) : (
+							<div className={Styles.card__actualities}>
 							<h3>{lastActualities.title}</h3>
 							<p>{lastActualities.content.substring(0, 200)} ...</p>
 							<button className={Styles.btn__actualities}><Link href="/actuality" >Voir plus ...</Link></button>
 						</div>
+						) }
+						
 				</section>
 
         		<section className={Styles.testimonials}>

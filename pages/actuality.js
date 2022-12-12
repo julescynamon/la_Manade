@@ -29,9 +29,9 @@ export async function getStaticProps() {
 }
 
 
-export default function Actuality({ actualities}) {
+export default function Actuality({ actualities }) {
 
-	if(actualities){
+	if(actualities.length > 0){
 		const lastActualities = actualities.slice(-1)[0].attributes;
 		const image = lastActualities.image.data;
 		const newImg = image?.attributes.formats.small.url.toString();
