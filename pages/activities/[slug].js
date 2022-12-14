@@ -90,7 +90,7 @@ export default function Activities({ activity }) {
                     {activity.attributes.image.data.map((image) => (
                         <SwiperSlide key={image.id}>
                             <div className={Styles.imgActivities}>
-                                <Image src={API_URL + image.attributes.formats.small.url.toString()} alt="" width="600" height="500" quality={70} />
+                                <Image src={API_URL + image.attributes.formats.small.url.toString()} alt={ image.attributes.alternativeText } width="600" height="500" quality={70} />
                             </div>
                         </SwiperSlide>
                     ))}

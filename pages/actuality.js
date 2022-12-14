@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Styles from '../styles/Actualities.module.css';
 
 import { getActualities } from './api/actualitiesAPI';
+import { API_URL } from '../config/config';
 
 
 export async function getStaticProps() {
@@ -52,7 +53,7 @@ export default function Actuality({ actualities }) {
 						}}
 						className={Styles.card}>
 							<div className={Styles.image}>
-							{ newImg ? <Image src={API_URL + newImg} alt="image" width={500} height={500}/> : <Image src="/images/priscilla-du-preez-tGtWKDdicn4-unsplash.jpg" alt="image" width={500} height={500}/> }
+							{ newImg ? <Image src={API_URL + newImg} alt={ image.attributes.alternativeText } width={500} height={500}/> : <Image src="/images/priscilla-du-preez-tGtWKDdicn4-unsplash.jpg" alt="taureaux dans la plaine" width={500} height={500}/> }
 							</div>
 							<motion.h1
 							initial={{ opacity: 0, y: 100 }}

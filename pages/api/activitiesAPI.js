@@ -15,6 +15,7 @@ export async function getActivities() {
                 image {
                     data{
                     attributes{
+                        alternativeText
                         formats
                     }
                     }

@@ -14,6 +14,7 @@ export async function getActualities() {
                 image{
                     data {
                     attributes {
+                        alternativeText
                         formats
                     }
                     }
