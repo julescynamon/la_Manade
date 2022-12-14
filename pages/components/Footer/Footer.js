@@ -8,7 +8,7 @@ export default function Footer() {
         <footer className={Styles.footer}>
             <div className={Styles.socials}>
                 <h3>Suivez nous sur facebook</h3>
-                <Link href="https://fr-fr.facebook.com/lesproduitsfermiersdujoncas/"><FaFacebookF /></Link>
+                <Link href="https://fr-fr.facebook.com/lesproduitsfermiersdujoncas/"><FaFacebookF className={Styles.socialsLogo} /></Link>
             </div>
             <div className={Styles.line}></div>
             <div className={Styles.contact}>
@@ -21,6 +21,7 @@ export default function Footer() {
             <div className={Styles.copyright}>
                 <p>© 2021 - Tous droits réservés</p>
                 <p><Link href="/mentions-legales">Mentions Légales</Link></p>
+                <p><Link href="/sitemap">Plan du site</Link></p>
             </div>
         </footer>
     )

@@ -1,7 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import Link from 'next/link';
 
 import Styles from '../styles/MentionsLegales.module.css';

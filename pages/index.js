@@ -45,6 +45,8 @@ export default function Home({ lastActualities, activities, googleReviewsData })
 
 	const newReviews = googleReviewsData.filter((review) => review.rating >= 4);
 
+	console.log(lastActualities);
+
 	return (
 		<>
 			<Head>
@@ -143,19 +145,23 @@ export default function Home({ lastActualities, activities, googleReviewsData })
 					transition={{ duration: 1 }}
 					>Dernières Actualitées ...</motion.h2>
 					<div className={Styles.separate__actualities}></div>
-						{ lastActualities.length ?  (
-							<div className={Styles.card__actualities}>
-								<h3>{lastActualities.title}</h3>
-								<p>{lastActualities.content.substring(0, 200)} ...</p>
-								<button className={Styles.btn__actualities}><Link href="/actuality" >Voir plus ...</Link></button>
-							</div>	
+						{ lastActualities.length < 1 ? 
+							(
+								<div className={Styles.card__actualities}>
+								<h3>Il n'y a pas d'actualitées pour le moment</h3>
+								<p>
+									Vous pouvez nous suivre sur notre page Facebook pour être au courant de nos dernières actualités.
+								</p>
+								<button className={Styles.btn__actualities}><Link href="https://www.facebook.com/manadedu.joncas" >Voir plus ...</Link></button>
+							</div>
 						) : (
 							<div className={Styles.card__actualities}>
-								<h3>Oops...</h3>
-								<p>Pas d'actualtées pour le moment ...</p>
+							<h3>{lastActualities.title}</h3>
+							<p>{lastActualities.content.substring(0, 200)} ...</p>
+							<button className={Styles.btn__actualities}><Link href="/actuality" >Voir plus ...</Link></button>
 							</div>
-						) }
-
+							)
+						}	
 				</section>
 
         		<section className={Styles.testimonials}>

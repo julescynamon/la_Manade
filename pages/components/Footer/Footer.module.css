@@ -27,19 +27,20 @@
     line-height: 35px;
 }
 
-.socials>a {
-    color: var(--white);
+.socialsLogo {
+    color: var(--color-primary);
     margin: 0 1rem;
+    margin-top: 10px;
     font-size: 1.5rem;
     transition: all .5s ease-in-out;
 }
 
-.socials>a:hover {
-    color: var(--color-primary);
+.socialsLogo:hover {
+    color: var(--white);
 }
 
 .contactUs {
-    color: var(--white);
+    color: var(--color-primary);
     text-align: center;
     margin-top: 1rem;
     font-family: var(--font);
@@ -50,7 +51,7 @@
 }
 
 .contactUs:hover {
-    color: var(--color-primary);
+    color: var(--white);
 }
 
 .line:after {
@@ -60,6 +61,20 @@
     background-color: var(--color-primary);
     margin-top: 1rem;
     display: block;
+}
+
+.copyright>p>a {
+    color: var(--color-primary);
+    padding: 10px;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 24px;
+    transition: all .5s ease-in-out;
+}
+
+.copyright>p>a:hover {
+    color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
@@ -88,7 +103,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0;
+    margin-top: 20px;
     display: flex;
 }
 
@@ -114,6 +129,7 @@
 .contact>p>a {
     color: var(--color-primary);
     text-decoration: none;
+    margin-top: 10px;
     transition: all .5s ease-in-out;
 }
 
@@ -146,6 +162,7 @@
         justify-content: space-around;
         align-items: center;
     }
+
 
     .socials {
         width: 100%;
@@ -210,23 +227,18 @@
         display: flex;
     }
 
-    .copyright>a {
+
+    .copyright>p>a {
         color: var(--color-primary);
-        text-decoration: none;
-        transition: all .5s ease-in-out;
-    }
-
-    .copyright>a:hover {
-        color: var(--white);
-    }
-
-
-    .copyright>p {
-        color: var(--color-primary);
-        padding: 20px;
+        padding: 10px;
         font-family: var(--font);
         font-size: 14px;
         font-weight: 200;
         line-height: 24px;
+        transition: all .5s ease-in-out;
+    }
+
+    .copyright>p>a:hover {
+        color: var(--white);
     }
 }
