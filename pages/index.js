@@ -115,7 +115,7 @@ export default function Home({
                         <div className={Styles.about__img}>
                             <Image
                                 className={Styles.image__back}
-                                src="/images/imgBack.jpg"
+                                src="/images/imgBack.webp"
                                 alt="taureaux en pleine nature"
                                 width="600"
                                 height="500"
@@ -123,7 +123,7 @@ export default function Home({
                             />
                             <Image
                                 className={Styles.image__front}
-                                src="/images/imgFront.jpg"
+                                src="/images/imgFront.webp"
                                 alt="taureaux en pleine nature"
                                 width="600"
                                 height="500"

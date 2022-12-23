@@ -218,7 +218,7 @@
 
 .activities {
     width: 100%;
-    background-image: url("/images/activitiesBack.jpg");
+    background-image: url("/images/activitiesBack.webp");
     background-position: 50%;
     background-repeat: no-repeat;
     box-shadow: -2px 17px 13px -6px var(--white) inset;
@@ -253,7 +253,6 @@
 .cardActivities {
     width: 100%;
     min-height: 294px;
-    -webkit-backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     background-color: #ffffff30;
@@ -365,7 +364,7 @@
 .card__actualities {
     width: 100%;
     min-height: 200px;
-    background-image: linear-gradient(#ed6c5ba3, #1659556c), url("/images/actualitiesImg.jpg");
+    background-image: linear-gradient(#ed6c5ba3, #1659556c), url("/images/actualitiesImg.webp");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;

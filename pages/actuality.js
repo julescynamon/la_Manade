@@ -63,7 +63,7 @@ export default function Actuality({ actualities }) {
                                     />
                                 ) : (
                                     <Image
-                                        src="/images/priscilla-du-preez-tGtWKDdicn4-unsplash.jpg"
+                                        src="/images/manuel-lopez-Eao2P-T8_NU-unsplash.webp"
                                         alt="taureaux dans la plaine"
                                         width={500}
                                         height={500}
