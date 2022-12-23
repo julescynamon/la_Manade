@@ -27,7 +27,7 @@ export async function getActivities() {
             }
         } 
     `;
-    
+
     const options = {
         method: 'POST',
         headers: {

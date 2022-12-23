@@ -24,7 +24,7 @@ export async function getActualities() {
             }
         } 
     `;
-    
+
     const options = {
         method: 'POST',
         headers: {
@@ -37,4 +37,3 @@ export async function getActualities() {
     const actualities = response.data.data.actualities.data;
     return actualities;
 }
-

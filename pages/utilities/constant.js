@@ -6,4 +6,4 @@ export const PageTitles = {
     activity: 'La Manade du Joncas - Activités',
     legals: 'La Manade du Joncas - Mentions légales',
     sitemap: 'La Manade du Joncas - Plan du site',
-}
+};

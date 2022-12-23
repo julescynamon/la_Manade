@@ -33,6 +33,4 @@ export async function getHebergements() {
     const response = await axios(options);
     const hebergements = response.data.data.hebergements.data;
     return hebergements;
-
 }
-
