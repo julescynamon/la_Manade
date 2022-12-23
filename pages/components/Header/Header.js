@@ -1,27 +1,26 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { useState } from 'react';
 
-import Link from 'next/link'
-import Image from 'next/image'
-import Styles from './Header.module.css'
+import Link from 'next/link';
+import Image from 'next/image';
+import Styles from './Header.module.css';
 
-import { BsChevronUp, BsChevronDown } from 'react-icons/bs'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineClose } from 'react-icons/ai'
+import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineClose } from 'react-icons/ai';
 
-import NavOver from './NavOver'
+import NavOver from './NavOver';
 
 export default function Header() {
-    const [showNavOver, setShowNavOver] = useState(false)
+    const [showNavOver, setShowNavOver] = useState(false);
 
     const toggleNavOver = () => {
-        setShowNavOver(!showNavOver)
+        setShowNavOver(!showNavOver);
         addEventListener('click', () => {
-            setShowNavOver(false)
-        })
-    }
+            setShowNavOver(false);
+        });
+    };
 
-    const [active, setActive] = useState(false)
+    const [active, setActive] = useState(false);
 
     return (
         <header className={Styles.header}>
@@ -39,10 +38,10 @@ export default function Header() {
             <div
                 className={Styles.burger}
                 onClick={() => {
-                    setActive(!active)
+                    setActive(!active);
                     active
                         ? (document.body.style.overflow = 'auto')
-                        : (document.body.style.overflow = 'hidden')
+                        : (document.body.style.overflow = 'hidden');
                 }}
             >
                 {active ? (
@@ -83,5 +82,5 @@ export default function Header() {
                 </nav>
             </div>
         </header>
-    )
+    );
 }
