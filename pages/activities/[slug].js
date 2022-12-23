@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Styles from '../../styles/Activities.module.css';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { PageTitles } from '../utilities/constant';
 
 import { motion } from 'framer-motion';
 
@@ -59,7 +60,7 @@ export default function Activities({ activity }) {
     return (
         <>
             <Head>
-                    <title>La Manade du Joncas - Activitées</title>
+                    <title>{ PageTitles.activity }</title>
                     <meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur. Découvrez nos activitées" />
             </Head>
 

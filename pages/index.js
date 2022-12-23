@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PageTitles } from './utilities/constant';
 import { motion } from 'framer-motion';
 
 import Styles from '../styles/Home.module.css';
@@ -50,7 +51,7 @@ export default function Home({ lastActualities, activities, googleReviewsData })
 	return (
 		<>
 			<Head>
-				<title>La Manade du Joncas - Ferme Taurine</title>
+				<title>{ PageTitles.home }</title>
 				<meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur." />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>

@@ -6,6 +6,7 @@ import Styles from '../styles/Actualities.module.css';
 
 import { getActualities } from './api/actualitiesAPI';
 import { API_URL } from '../config/config';
+import { PageTitles } from './utilities/constant';
 
 
 export async function getStaticProps() {
@@ -36,7 +37,7 @@ export default function Actuality({ actualities }) {
 		return (
 			<>
             <Head>
-                    <title>La Manade du Joncas - Actualitées</title>
+                    <title>{ PageTitles.actuality }</title>
                     <meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux, ainnsi que nos produits fermiers direct producteur. Découvrez nos dérnières actualitées" />
             </Head>
 

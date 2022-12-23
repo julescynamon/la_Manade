@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { PageTitles } from './utilities/constant';
 
 import Styles from '../styles/MentionsLegales.module.css';
 
@@ -7,7 +8,7 @@ export default function legales() {
     return (
         <>
             <Head>
-				<title>La Manade du Joncas - Mentions Légales</title>
+				<title>{ PageTitles.legals }</title>
 				<meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux. Mentions Légales du site." />
 			</Head>
 

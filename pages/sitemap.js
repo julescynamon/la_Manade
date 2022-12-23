@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Styles from '../styles/Sitemap.module.css';
+import { PageTitles } from './utilities/constant';
 
 
 export default function sitemap() {
     return (
         <>
             <Head>
-				<title>La Manade du Joncas - Plan du site</title>
+				<title>{ PageTitles.sitemap }</title>
 				<meta name="description" content="ferme-taurine, soirée Camarguaise, c'est dans ce cadre atypique situé sur la commune de St André d'Olérargues dans le Gard, que nous vous acceuillons pour vous faire découvrir notre passion des taureaux. Plan du site." />
 			</Head>
 
