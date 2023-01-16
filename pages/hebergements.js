@@ -18,7 +18,8 @@ import 'swiper/css/autoplay';
 import { Pagination, Navigation } from 'swiper';
 
 import { getHebergements } from './api/hebergementAPI';
-import { API_URL } from '../config/config';
+
+const API_URL = 'http://127.0.0.1:1337';
 
 export async function getStaticProps() {
     const data = await getHebergements();
@@ -110,7 +111,6 @@ export default function hebergements({ hebergements }) {
                         >
                             {hebergements.title}
                         </motion.h1>
-
                         <ReactMarkdown children={hebergements.content} />
                     </motion.div>
                 </div>

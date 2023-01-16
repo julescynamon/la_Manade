@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Styles from '../styles/Actualities.module.css';
 
 import { getActualities } from './api/actualitiesAPI';
-import { API_URL } from '../config/config';
+const API_URL = process.env.API_URL;
 import { PageTitles } from './utilities/constant';
 
 export async function getStaticProps() {

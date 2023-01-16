@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { API_URL } from '../../config/config';
+const API_URL = process.env.API_URL;
 
 // get the last actualities
 export async function getActivities() {

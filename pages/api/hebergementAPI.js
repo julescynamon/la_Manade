@@ -1,5 +1,6 @@
-import { API_URL } from '../../config/config';
 import axios from 'axios';
+
+const API_URL = process.env.API_URL;
 
 export async function getHebergements() {
     const query = `

@@ -21,7 +21,7 @@ import { Pagination, Navigation } from 'swiper';
 
 import { getActivities } from '../api/activitiesAPI';
 
-import { API_URL } from '../../config/config';
+const API_URL = process.env.API_URL;
 
 export async function getStaticPaths() {
     const activities = await getActivities();
@@ -88,12 +88,10 @@ export default function Activities({ activity }) {
                                     <div className={Styles.imgActivities}>
                                         <Image
                                             src={
-                                                API_URL +
+                                                'http://127.0.0.1:1337' +
                                                 image.attributes.formats.small.url.toString()
                                             }
-                                            alt={
-                                                image.attributes.alternativeText
-                                            }
+                                            alt=""
                                             width="600"
                                             height="500"
                                             quality={70}
@@ -106,7 +104,7 @@ export default function Activities({ activity }) {
                         <div className={Styles.imgActivities}>
                             <Image
                                 src={
-                                    API_URL +
+                                    'http://127.0.0.1:1337' +
                                     activity.attributes.image.data[0].attributes.formats.small.url.toString()
                                 }
                                 alt=""
