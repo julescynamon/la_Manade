@@ -5,8 +5,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { motion } from 'framer-motion';
 
 import Head from 'next/head';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import Styles from '../styles/Contact.module.css';
 import { PageTitles } from './utilities/constant';
 

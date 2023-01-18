@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-const API_URL = process.env.API_URL;
-
 export async function getHebergements() {
     const query = `
     query {
@@ -23,7 +21,7 @@ export async function getHebergements() {
     }`;
 
     const options = {
-        url: `${API_URL}/graphql`,
+        url: `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

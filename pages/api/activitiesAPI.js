@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-const API_URL = process.env.API_URL;
-
 // get the last actualities
 export async function getActivities() {
     const query = `
@@ -36,7 +34,10 @@ export async function getActivities() {
         data: JSON.stringify({ query }),
     };
 
-    const response = await axios(`${API_URL}/graphql`, options);
+    const response = await axios(
+        `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
+        options
+    );
     const activities = response.data.data.activities;
     return activities;
 }

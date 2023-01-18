@@ -19,8 +19,6 @@ import { Pagination, Navigation } from 'swiper';
 
 import { getHebergements } from './api/hebergementAPI';
 
-const API_URL = 'http://127.0.0.1:1337';
-
 export async function getStaticProps() {
     const data = await getHebergements();
     const hebergements = data[0].attributes;
@@ -75,7 +73,10 @@ export default function hebergements({ hebergements }) {
                                 {images.map((image, index) => (
                                     <SwiperSlide key={index}>
                                         <Image
-                                            src={API_URL + image}
+                                            src={
+                                                process.env
+                                                    .NEXT_PUBLIC_API_URL + image
+                                            }
                                             alt="roulotte"
                                             width="600"
                                             height="500"
@@ -86,7 +87,7 @@ export default function hebergements({ hebergements }) {
                         ) : (
                             <Image
                                 src={
-                                    API_URL +
+                                    process.env.NEXT_PUBLIC_API_URL +
                                     hebergements.image.data[0].attributes.formats.medium.url.toString()
                                 }
                                 alt=""

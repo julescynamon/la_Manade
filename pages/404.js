@@ -3,9 +3,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import Head from 'next/head';
-import Image from 'next/image';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import Styles from '../styles/Custom404.module.css';
 
 export default function custom404() {

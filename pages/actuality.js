@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Styles from '../styles/Actualities.module.css';
 
 import { getActualities } from './api/actualitiesAPI';
-const API_URL = process.env.API_URL;
 import { PageTitles } from './utilities/constant';
 
 export async function getStaticProps() {
@@ -56,7 +55,10 @@ export default function Actuality({ actualities }) {
                             <div className={Styles.image}>
                                 {newImg ? (
                                     <Image
-                                        src={API_URL + newImg}
+                                        src={
+                                            process.env.NEXT_PUBLIC_API_URL +
+                                            newImg
+                                        }
                                         alt={image.attributes.alternativeText}
                                         width={500}
                                         height={500}
