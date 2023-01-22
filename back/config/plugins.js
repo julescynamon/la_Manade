@@ -1,7 +1,13 @@
 module.exports = ({ env }) => ({
-        // ...
-        seo: {
+    // ...
+    seo: {
         enabled: true,
+    },
+    'cookie-manager': {
+        enabled: true,
+        config: {
+            localization: true,
         },
-        // ...
-    });
+    },
+    // ...
+});
