@@ -3,9 +3,11 @@
     max-width: 1200px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "img attract content";
-    margin: 0 auto;
+    margin: 85px auto;
     padding: 1rem;
     display: grid;
+    position: relative;
+    z-index: -2;
 }
 
 @media screen and (max-width: 900px) {

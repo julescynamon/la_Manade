@@ -8,6 +8,8 @@
     justify-content: center;
     background: linear-gradient(270deg, #f9ac66, #f2e2d4);
     background-size: 400% 400%;
+    position: relative;
+    z-index: -2;
 
     -webkit-animation: AnimationName 30s ease infinite;
     -moz-animation: AnimationName 30s ease infinite;
